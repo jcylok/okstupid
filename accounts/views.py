@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib import auth
-from okcupid.models import Profile
+from okstupid.models import Profile
 
 
 # Create your views here.
@@ -37,3 +37,29 @@ def register(request):
       return render(request, 'home.html', context)
   else:
     return render(request, 'home.html')
+
+
+def login(request):
+  if request.method == 'POST':
+    username = request.POST['username']
+    password = request.POST['password']
+    user = auth.authenticate(username=username, password=password)
+    if user is not None:
+      auth.login(request, user)
+      return redirect('find_singles')
+    else:
+      context = {'error':'Invalid username or password'}
+      return render(request, 'login', context)
+  else:
+    return render(request, 'login.html')
+
+
+def logout(request):
+  auth.logout(request)
+  return redirect('home')
+
+# might not need.
+def profile(request):
+  profiles = Profile.objects.filter(user=request.user)
+  context = {'profiles':profiles}
+  return render(request, 'profile.html', context)
