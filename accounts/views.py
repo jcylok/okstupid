@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib import auth
-from okcupid.models import Profile
+from okstupid.models import Profile
 
 
 # Create your views here.

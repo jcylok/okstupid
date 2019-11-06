@@ -4,6 +4,7 @@ from django.core.files.storage import FileSystemStorage
 from django.core.validators import MinLengthValidator
 
 
+
 fs = FileSystemStorage(location='/media/photos')
 
 # Create your models here.
