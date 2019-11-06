@@ -9,4 +9,3 @@ from .models import Profile, Matched
 
 def home(request):
     return render(request, 'home.html')
-
