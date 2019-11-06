@@ -7,8 +7,8 @@ urlpatterns = [
   path('profile/<int:pk>/edit', views.profile_edit, name='profile_edit'),
   path('profile/<int:pk>/delete', views.profile_delete, name='profile_delete'),
 
-  path('profile/<int:pk>/findsinlges', views.profile_findsingles, name='profile_findsingles'),
-  path('profile/<int:pk>/matches', views.profile_matches, name='profile_matches'),
+  path('profile/<int:pk>/findsinlges', views.find_singles, name='findsingles'),
+  path('profile/<int:pk>/matches', views.matches, name='matches'),
 
   path('connected/<int:match_id>', views.profile_connected, name='profile_connected')
 
