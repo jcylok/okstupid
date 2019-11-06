@@ -10,6 +10,6 @@ urlpatterns = [
   path('profile/<int:pk>/findsinlges', views.find_singles, name='findsingles'),
   path('profile/<int:pk>/matches', views.matches, name='matches'),
 
-  path('connected/<int:match_id>', views.profile_connected, name='profile_connected')
+  # path('connected/<int:match_id>', views.profile_connected, name='profile_connected')
 
 ]
