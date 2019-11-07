@@ -5,11 +5,10 @@ from . import views
 urlpatterns = [
   path('', views.home, name='home'),
 
-  path('profile/', views.profile, name='profile')
+  path('profile/', views.profile, name='profile'),
   # path('profile/edit', views.profile_edit, name='profile_edit'),
   # path('profile/delete', views.profile_delete, name='profile_delete'),
 
-  # path('profile/findsinlges', views.find_singles, name='findsingles'),
   # path('profile/<int:pk>/', views.profile_show, name='profile_show'),
   # path('profile/matches', views.matches, name='matches'),
 
