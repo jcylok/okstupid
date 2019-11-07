@@ -3,10 +3,15 @@
 {% block content %}
 
 <section class="form-section">
-    <h1>Add preference</h1>
+
+    <h1>My Profile</h1>
+    <p>Welcome back, {{ profile.nickname }}</p>
     {% if profile.user_id.id == user.id %}
+    <a href="{}">logout</a>
+    <a href="/findsingles">Find Singles</a>
+    <a href="/matches">Matches</a>
     <!-- {{ profile.user_id.username }} -->
-    Welcome back, {{ profile.nickname }}
+  
     <ul>
       <li> Gender: {{ profile.gender}}</li>
       <li> Location: {{ profile.location}}</li>

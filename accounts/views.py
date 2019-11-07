@@ -1,46 +1,42 @@
 from django.shortcuts import render, redirect
-from django.contrib import auth
 from django.contrib.auth.models import User
+from django.contrib import auth
 from okstupid.models import Profile
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages 
 
 # Create your views here.
 
 def register(request):
-  if request.method == 'POST':
-    first_name = request.POST['first_name']
+  if request.method == "POST":
+    fist_name = request.POST['first_name']
     last_name = request.POST['last_name']
     username = request.POST['username']
     email = request.POST['email']
     password = request.POST['password']
     password2 = request.POST['password2']
     if password == password2:
-      # check if username exits in db
       if User.objects.filter(username=username).exists():
-        context = {'error': 'Username is already taken.'}
-        return render(request, 'register.html', context)
+        context = {'error': 'Impossible username input, please try again.'}
+        return render(request, 'home.html', context)
       else:
         if User.objects.filter(email=email).exists():
-          context = {'error': 'Username is already taken.'}
-          return render(request, 'register.html', context)
+          context = {'error': 'Impossible email input, please try again.'}
+          return render(request, 'home.html', context)
         else:
-          #if everything is ok create account
           user = User.objects.create_user(
             username=username,
             email=email,
             password=password,
             first_name=first_name,
-            last_name=last_name)
+            last_name=last_name
+            )
           user.save()
-          return redirect('login')
+          return redirect('profile_form')
     else:
-      context = {'error': 'Password do not match'}
-      return render(request, 'register.html', context)
+      context = {'error': 'Passwords do not match.'}
+      return render(request, 'home.html', context)
   else:
-    # if not post send form
-    return render(request, 'register.html')
-        
+    return render(request, 'home.html')
+
 
 def login(request):
   if request.method == 'POST':
@@ -60,3 +56,4 @@ def login(request):
 def logout(request):
   auth.logout(request)
   return redirect('home')
+

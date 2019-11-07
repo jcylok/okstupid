@@ -4,17 +4,18 @@
 
 <section>
     <h1>{{ header }}</h1>
-    <!-- {% if profile.user_id == user.id %} -->
-    
+    {% if profile.user_id == request.user %}
 
-    <!-- {% else %} -->
-    <!-- <p>YOU SHALL NOT PASS</p> -->
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Save</button>
     </form>
-    <!-- {% endif %} -->
+    {% else %}
+
+    <p>YOU SHALL NOT PASS</p>
+    {% endif %}
+
 </section>
 
 {% endblock %}

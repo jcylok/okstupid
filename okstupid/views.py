@@ -27,5 +27,5 @@ def profile_edit(request):
             return redirect('profile')
     else:
         form = ProfileForm(instance=profile)
-    context = {'form': form, 'header': f"Edit profile: {profile.nickname}"}
+    context = {'profile': profile, 'form': form, 'header': f"Edit profile: {profile.nickname}"}
     return render(request, 'profile_form.html', context)
