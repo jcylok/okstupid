@@ -9,13 +9,13 @@ fs = FileSystemStorage(location='/media/photos')
 
 # Create your models here.
 class Profile(models.Model):
-  nickname = models.CharField(max_length=25, validators=[MinLengthValidator(2)])
-  gender = models.CharField(blank=True,max_length=25)
-  age = models.PositiveIntegerField(validators=[MinLengthValidator(2)])
+  nickname = models.CharField(max_length=15, validators=[MinLengthValidator(2)])
+  gender = models.CharField(blank=True,max_length=5)
+  age = models.PositiveIntegerField()
   height = models.CharField(max_length=5)
   location = models.CharField(max_length=25)
   job_title = models.CharField(max_length=25)
-  education = models.CharField(max_length=25)
+  education = models.CharField(max_length=50)
   hometown = models.CharField(max_length=25)
   drinker = models.BooleanField(default=False)
   smoker = models.BooleanField(default=False)
