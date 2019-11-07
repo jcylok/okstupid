@@ -43,7 +43,6 @@ def register(request):
       return render(request, 'register.html', context)
   else:
     return render(request, 'register.html')
-        
 
 def login(request):
   if request.method == 'POST':
