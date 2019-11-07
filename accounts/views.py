@@ -6,8 +6,14 @@ from okstupid.models import Profile
 # Create your views here.
 
 def register(request):
+<<<<<<< HEAD
   if request.method == "POST":
     fist_name = request.POST['first_name']
+=======
+  auth.logout(request)
+  if request.method == 'POST':
+    first_name = request.POST['first_name']
+>>>>>>> submaster
     last_name = request.POST['last_name']
     username = request.POST['username']
     email = request.POST['email']
@@ -30,13 +36,18 @@ def register(request):
             last_name=last_name
             )
           user.save()
-          return redirect('create_profile')
+          user = auth.authenticate(username=username, password=password)
+          if user is not None:
+            auth.login(request, user)
+            return redirect('create_profile')
+          else:
+            return redirect('login')
     else:
       context = {'error': 'Passwords do not match.'}
       return render(request, 'home.html', context)
   else:
-    return render(request, 'home.html')
-
+    return render(request, 'register.html')
+        
 
 def login(request):
   if request.method == 'POST':
