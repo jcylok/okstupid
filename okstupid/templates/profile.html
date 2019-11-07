@@ -1,10 +1,10 @@
-{ % extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
 <section class="form-section">
-    <h1>Add new Artist</h1>
-    {% profile.user == user %}
+    <h1>Add preference</h1>
+    {% if profile.user_id.id == user.id %}
     <form  method="POST" class="artist-form">
       {% csrf_token %}
       {{form.as_p}}
@@ -15,5 +15,4 @@
     {% endif %}
   </section>
 
-
-{% endBlock %}
+{% endblock %}
