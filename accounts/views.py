@@ -51,7 +51,7 @@ def login(request):
     user = auth.authenticate(username=username, password=password)
     if user is not None:
       auth.login(request, user)
-      return redirect('create_profile')
+      return redirect('profile')
     else:
       context = {'error':'Invalid username or password'}
       return render(request, 'login', context)

@@ -49,5 +49,5 @@ def create_profile(request):
 
 def singles_list(request):
   profiles = Profile.objects.filter().exclude(user_id=request.user)
-  context = {'profiles'; profiles}
+  context = {'profiles': profiles}
   return render(request, 'find_singles.html', context)
