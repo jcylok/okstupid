@@ -10,9 +10,7 @@ from .models import Profile, Matched
 def home(request):
     return render(request, 'home.html')
 
-
 def profile(request):
   profiles = Profile.objects.filter(user=request.user)
   context = {'profiles':profiles}
   return render(request, 'profile.html', context)
-
