@@ -30,7 +30,7 @@ def register(request):
             last_name=last_name
             )
           user.save()
-          return redirect('profile_form')
+          return redirect('create_profile')
     else:
       context = {'error': 'Passwords do not match.'}
       return render(request, 'home.html', context)
@@ -45,7 +45,7 @@ def login(request):
     user = auth.authenticate(username=username, password=password)
     if user is not None:
       auth.login(request, user)
-      return redirect('profile')
+      return redirect('create_profile')
     else:
       context = {'error':'Invalid username or password'}
       return render(request, 'login', context)

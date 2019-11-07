@@ -19,7 +19,7 @@ def profile(request):
 
 def profile_edit(request):
     profile = Profile.objects.get(user_id=request.user.id)
-
+    print(profile)
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=profile)
         if form.is_valid():
@@ -28,4 +28,18 @@ def profile_edit(request):
     else:
         form = ProfileForm(instance=profile)
     context = {'profile': profile, 'form': form, 'header': f"Edit profile: {profile.nickname}"}
+    return render(request, 'profile_form.html', context)
+
+
+def create_profile(request):
+  if request.method == 'POST':
+    form = ProfileForm(request.POST)
+    if form.is_valid():
+      profile = form.save(commit=False)
+      profile.user_id = request.user
+      profile.save()
+      return redirect('profile')
+  else:
+    form = ProfileForm()
+    context = {'form': form, 'header': 'Create Your Profile'}
     return render(request, 'profile_form.html', context)
