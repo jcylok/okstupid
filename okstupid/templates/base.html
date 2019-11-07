@@ -12,13 +12,8 @@
 
     <nav>
       <section>
-        {% if user.is_authenticated %}
-        Welcome, {{user.username}}
-        <a href="#">logout</a>
-        {% else %}
         <a href="#">Sign up</a>
         <a href="#">Login</a>
-        {% endif%}
       </section>
     </nav>
   </header>
