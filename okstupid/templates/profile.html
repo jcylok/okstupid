@@ -4,7 +4,7 @@
 
 <section class="form-section">
     <h1>Add preference</h1>
-    {% if profile.user_id.id == user.id %}
+    <!-- {% if profile.user_id.id == user.id %} -->
     <!-- {{ profile.user_id.username }} -->
     Welcome back, {{ profile.nickname }}
     <ul>
@@ -15,9 +15,9 @@
       <li> Hometown: {{ profile.hometown}}</li>
     </ul>
 
-    {% else %}
+    <!-- {% else %} -->
     <p> you are not Authorized.</p>
-    {% endif %}
+    <!-- {% endif %} -->
   </section>
 
 {% endblock %}
