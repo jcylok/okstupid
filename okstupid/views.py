@@ -37,7 +37,7 @@ def create_profile(request):
     form = ProfileForm(request.POST)
     if form.is_valid():
       profile = form.save(commit=False)
-      profile.user_id = request.user.id
+      profile.user_id = request.user
       profile.save()
       profile = Profile.objects.get(user_id=request.user.id)
       context = {'profile':profile}
