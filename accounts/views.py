@@ -8,6 +8,7 @@ from django.contrib import messages
 # Create your views here.
 
 def register(request):
+  auth.logout(request)
   if request.method == 'POST':
     first_name = request.POST['first_name']
     last_name = request.POST['last_name']
@@ -16,7 +17,6 @@ def register(request):
     password = request.POST['password']
     password2 = request.POST['password2']
     if password == password2:
-      # check if username exits in db
       if User.objects.filter(username=username).exists():
         context = {'error': 'Username is already taken.'}
         return render(request, 'register.html', context)
@@ -25,7 +25,6 @@ def register(request):
           context = {'error': 'Username is already taken.'}
           return render(request, 'register.html', context)
         else:
-          #if everything is ok create account
           user = User.objects.create_user(
             username=username,
             email=email,
@@ -33,12 +32,16 @@ def register(request):
             first_name=first_name,
             last_name=last_name)
           user.save()
-          return redirect('create_profile')
+          user = auth.authenticate(username=username, password=password)
+          if user is not None:
+            auth.login(request, user)
+            return redirect('create_profile')
+          else:
+            return redirect('login')
     else:
       context = {'error': 'Password do not match'}
       return render(request, 'register.html', context)
   else:
-    # if not post send form
     return render(request, 'register.html')
 
 def login(request):
