@@ -29,6 +29,8 @@ class Profile(models.Model):
   age_preference_min = models.PositiveIntegerField()
   gender_preference = models.CharField(blank=True, max_length=25)
   user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='profiles')
+  def __str__(self):
+    return self.nickname
 
 
 class Matched(models.Model):
