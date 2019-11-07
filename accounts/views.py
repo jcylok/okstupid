@@ -58,8 +58,3 @@ def logout(request):
   auth.logout(request)
   return redirect('home')
 
-# might not need.
-def profile(request):
-  profiles = Profile.objects.filter(user=request.user)
-  context = {'profiles':profiles}
-  return render(request, 'profile.html', context)
