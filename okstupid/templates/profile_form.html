@@ -5,17 +5,10 @@
 <section>
     <h1>{{ header }}</h1>
     <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Save</button>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
     </form>
-    <!-- {% if profile.user_id == user.id %} -->
-    
-
-    <!-- {% else %} -->
-    <!-- <p>YOU SHALL NOT PASS</p> -->
-
-    <!-- {% endif %} -->
 </section>
 
 {% endblock %}
