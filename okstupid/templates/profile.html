@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<nav>
+    <section>
+      <a href="{%url 'logout'%}">Logout</a>
+      <a href="{%url 'register'%}">find singles</a>
+      <a href="{% url 'login' %}">Matches</a>
+    </section>
+  </nav>
 <section class="form-section">
     <h1>Add preference</h1>
-    <!-- {% if profile.user_id.id == user.id %} -->
-    <!-- {{ profile.user_id.username }} -->
     Welcome back, {{ profile.nickname }}
     <ul>
       <li> Gender: {{ profile.gender}}</li>
@@ -14,10 +18,7 @@
       <li> Education: {{ profile.education}}</li>
       <li> Hometown: {{ profile.hometown}}</li>
     </ul>
-
-    <!-- {% else %} -->
     <p> you are not Authorized.</p>
-    <!-- {% endif %} -->
   </section>
 
 {% endblock %}
