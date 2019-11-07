@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from okstupid.models import Profile
 
-
 # Create your views here.
 
 def register(request):
@@ -46,7 +45,7 @@ def login(request):
     user = auth.authenticate(username=username, password=password)
     if user is not None:
       auth.login(request, user)
-      return redirect('find_singles')
+      return redirect('profile')
     else:
       context = {'error':'Invalid username or password'}
       return render(request, 'login', context)
