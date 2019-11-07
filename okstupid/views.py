@@ -6,6 +6,7 @@ from django.contrib import auth
 from .models import Profile, Matched
 from .forms import ProfileForm
 
+
 # Create your views here.
 
 def home(request):
