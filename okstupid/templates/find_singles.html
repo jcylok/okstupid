@@ -12,8 +12,22 @@
       <a href="#">Login</a>
       {% endif%}
       <a href="/matches">Matches</a>
-      <a href="/findsingles">Singles_list</a>
+      <a href="/findsingles">Singles List</a>
     </section>
   </nav>
 
-{% endblock %}
+<main>
+<ul>
+  <h1>Check out these Stupids in your Area</h1>
+  {% for profile in profiles%}
+  <a href="{% url 'profile' pk=profile.pk %}">
+    <li>
+      <img src="{{profile.photo_one}}" alt="{{profile.name}">
+      <p>{{profile.nickname}}</p>
+      <p>{{profile.age}}</p>   
+    </li>
+  </a>
+  {% endfor %}
+  </ul>
+</main>  
+{% endBlock %}

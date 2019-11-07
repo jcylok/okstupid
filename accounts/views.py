@@ -42,7 +42,6 @@ def register(request):
       return render(request, 'home.html', context)
   else:
     return render(request, 'register.html')
-        
 
 def login(request):
   if request.method == 'POST':
