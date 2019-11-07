@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    <h1>{{ header }}</h1>
+    <!-- {% if profile.user_id == user.id %} -->
+    
+
+    <!-- {% else %} -->
+    <!-- <p>YOU SHALL NOT PASS</p> -->
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <!-- {% endif %} -->
+</section>
+
+{% endblock %}
