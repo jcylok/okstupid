@@ -7,7 +7,7 @@ from okstupid.models import Profile
 # Create your views here.
 
 def register(request):
-  if request.methos == "POST":
+  if request.method == "POST":
     fist_name = request.POST['first_name']
     last_name = request.POST['last_name']
     username = request.POST['username']
