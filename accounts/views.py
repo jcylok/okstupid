@@ -40,7 +40,6 @@ def register(request):
   else:
     # if not post send form
     return render(request, 'register.html')
-        
 
 def login(request):
   if request.method == 'POST':
