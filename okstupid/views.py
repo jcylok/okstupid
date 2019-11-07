@@ -46,3 +46,8 @@ def create_profile(request):
     form = ProfileForm()
     context = {'form': form, 'header': 'Create Your Profile'}
     return render(request, 'profile_form.html', context)
+
+def singles_list(request):
+  profiles = Profile.objects.filter().exclude(user_id=request.user)
+  context = {'profiles'; profiles}
+  return render(request, 'find_singles.html', context)
