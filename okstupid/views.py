@@ -9,16 +9,8 @@ from .models import Profile, Matched
 
 def home(request):
     return render(request, 'home.html')
-<<<<<<< HEAD
-=======
-
->>>>>>> 511a52034d8728fcbfefdd8234070d14502df85e
 
 def profile(request):
   profiles = Profile.objects.filter(user=request.user)
   context = {'profiles':profiles}
   return render(request, 'profile.html', context)
-<<<<<<< HEAD
-=======
-
->>>>>>> 511a52034d8728fcbfefdd8234070d14502df85e
