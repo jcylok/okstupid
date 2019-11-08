@@ -75,7 +75,18 @@ def singles_list(request):
   context = {'profiles': profiles}
   return render(request, 'find_singles.html', context)
 
+def profile_show(request, pk):
+  profile = Profile.objects.get(id=pk)
+  context = {'profile': profile}
+  return render(request, 'profile', context)
 
+def profile_delete(request, pk):
+  User.objects.get(id=pk).delete()
+  return render(request, 'home.html', {'pk': pk})
+
+<<<<<<< HEAD
 
 def matches(request):
   matches = Matched.objects.filter(profile_id_init=request.user.id, confirmed=True) | Matched.objects.filter(profile_id_connect=request.user.id)
+=======
+>>>>>>> submaster
