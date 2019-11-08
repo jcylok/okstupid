@@ -52,9 +52,6 @@ def singles_list(request):
   context = {'profiles': profiles}
   return render(request, 'find_singles.html', context)
 
-
-
-
 def profile_show(request, pk):
   profile = Profile.objects.get(id=pk)
   context = {'profile': profile}
