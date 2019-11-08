@@ -6,7 +6,7 @@
     Welcome, {{ profile.nickname }}
     <h1>Profile</h1>
     <ul>
-      <h2><a href="{% url 'profile_show' pk=profile.pk %}">{{ profile.nickname }}</a></h2>
+      <h2>{{ profile.nickname }}</h2>
       <li> Gender: {{ profile.gender}}</li>
       <li> Location: {{ profile.location}}</li>
       <li> Job Title: {{ profile.job_title}}</li>
