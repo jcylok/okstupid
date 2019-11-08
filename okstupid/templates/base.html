@@ -12,11 +12,11 @@
 
     <nav>
       <section>
+          <a href="{%url 'register'%}">Sign up</a>
+          <a href="{% url 'login' %}">Login</a>
         {% if user.is_authenticated %}
         <a href="{% url 'profile_delete' pk=user.pk %}">delete</a>
         {% else %}
-        <a href="{%url 'register'%}">Sign up</a>
-        <a href="{% url 'login' %}">Login</a>
         {% endif %}
       </section>
     </nav>
