@@ -7,12 +7,12 @@
       {% if user.is_authenticated %}
       Welcome, {{user.username}}
       <a href="/">logout</a>
+      <a href="{% url 'matches_list' %}">Matches</a>
+      <a href="/singles">Singles List</a>
       {% else %}
       <a href="/register">Sign up</a>
       <a href="/login">Login</a>
       {% endif%}
-      <a href="/matches">Matches</a>
-      <a href="profile/singles">Singles List</a>
     </section>
   </nav>
 
@@ -22,7 +22,11 @@
   {% for profile in profiles%}
   <a href="">
     <li>
+<<<<<<< HEAD
       <img src="{{profile.photo_one}}" width="120" height="90" />      <p>{{profile.nickname}}</p>
+=======
+      <img src="/media/{{profile.photo_one}}" width="120" height="90" /> <p>{{profile.nickname}}</p>
+>>>>>>> b6cd6ea028b428dcdeaec54bcd9a1e4bbe36d084
       <p>{{profile.age}}</p>   
     </li>
   </a>
