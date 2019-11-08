@@ -84,9 +84,6 @@ def profile_delete(request, pk):
   User.objects.get(id=pk).delete()
   return render(request, 'home.html', {'pk': pk})
 
-<<<<<<< HEAD
 
 def matches(request):
   matches = Matched.objects.filter(profile_id_init=request.user.id, confirmed=True) | Matched.objects.filter(profile_id_connect=request.user.id)
-=======
->>>>>>> submaster
