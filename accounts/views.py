@@ -53,7 +53,7 @@ def login(request):
       return redirect('singles_list')
     else:
       context = {'error':'Invalid username or password'}
-      return render(request, 'login', context)
+      return render(request, 'login.html', context)
   else:
     return render(request, 'login.html')
 
