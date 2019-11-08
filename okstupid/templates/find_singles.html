@@ -6,19 +6,15 @@
     <section>
       {% if user.is_authenticated %}
       Welcome, {{user.username}}
-      <a href="/">logout</a>
       {#<a href="{% url 'matches_list' %}">Matches</a>#}
-      <a href="/singles">Singles List</a>
-      {% else %}
-      <a href="/register">Sign up</a>
-      <a href="/login">Login</a>
+      <p><a href="{% url 'profile_edit' %}">Edit My Profile</a></p>
       {% endif%}
     </section>
   </nav>
 
 <main>
 <ul>
-  <h1>Check out these Stupids in your Area</h1>
+  <h2>Check out these Stupids in your Area</h2>
   {% for profile in profiles%}
   <a href="">
     <li>
