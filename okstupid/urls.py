@@ -8,7 +8,7 @@ urlpatterns = [
   path('profile/', views.profile, name='profile'),
   path('profile/edit', views.profile_edit, name='profile_edit'),
   path('profile/create', views.create_profile, name='create_profile'),
-  path('profile/singles', views.singles_list, name='single_list'),
+  path('profile/singles', views.singles_list, name='singles_list'),
   # path('profile/delete', views.profile_delete, name='profile_delete'),
 
   # path('profile/<int:pk>/', views.profile_show, name='profile_show'),

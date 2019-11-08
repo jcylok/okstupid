@@ -50,7 +50,7 @@ def login(request):
     user = auth.authenticate(username=username, password=password)
     if user is not None:
       auth.login(request, user)
-      return redirect('profile')
+      return redirect('singles_list')
     else:
       context = {'error':'Invalid username or password'}
       return render(request, 'login', context)
