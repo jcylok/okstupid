@@ -1,19 +1,32 @@
-{ % extends 'base.html' %}
-
+{% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <nav>
     <section>
       {% if user.is_authenticated %}
       Welcome, {{user.username}}
-      <a href="#">logout</a>
+      <a href="/">logout</a>
+      {#<a href="{% url 'matches_list' %}">Matches</a>#}
+      <a href="/singles">Singles List</a>
       {% else %}
-      <a href="#">Sign up</a>
-      <a href="#">Login</a>
+      <a href="/register">Sign up</a>
+      <a href="/login">Login</a>
       {% endif%}
-      <a href="/matches">Matches</a>
-      <a href="/findsingles">Singles_list</a>
     </section>
   </nav>
 
-{% endBlock %}
+<main>
+<ul>
+  <h1>Check out these Stupids in your Area</h1>
+  {% for profile in profiles%}
+  <a href="">
+    <li>
+      <img src="/media/{{profile.photo_one}}" width="120" height="90" /> <p>{{profile.nickname}}</p>
+      <p>{{profile.age}}</p>   
+    </li>
+  </a>
+  {% endfor %}
+  </ul>
+</main>  
+{% endblock %}

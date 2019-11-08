@@ -27,7 +27,7 @@ def profile_edit(request):
             return redirect('profile')
     else:
         form = ProfileForm(instance=profile)
-    context = {'form': form, 'header': f"Edit profile: {profile.nickname}"}
+    context = {'profile': profile, 'form': form, 'header': f"Edit profile: {profile.nickname}"}
     return render(request, 'profile_form.html', context)
 
 
@@ -38,6 +38,7 @@ def create_profile(request):
     if form.is_valid():
       profile = form.save(commit=False)
       profile.user_id = request.user
+      profile.photo_one = request.FILES["photo_one"]
       profile.save()
       profile = Profile.objects.get(user_id=request.user.id)
       context = {'profile':profile}
@@ -46,3 +47,18 @@ def create_profile(request):
     form = ProfileForm()
     context = {'form': form, 'header': 'Create Your Profile'}
     return render(request, 'profile_form.html', context)
+
+def singles_list(request):
+  profiles = Profile.objects.filter().exclude(user_id=request.user)
+  context = {'profiles': profiles}
+  return render(request, 'find_singles.html', context)
+
+def profile_show(request, pk):
+  profile = Profile.objects.get(id=pk)
+  context = {'profile': profile}
+  return render(request, 'profile', context)
+
+def profile_delete(request, pk):
+  User.objects.get(id=pk).delete()
+  return render(request, 'home.html', {'pk': pk})
+
