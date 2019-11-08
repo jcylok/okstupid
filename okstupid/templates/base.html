@@ -20,16 +20,20 @@
       
       <nav>
         <ul class="navbar">
+          <li class="item">
           <a href="{%url 'register'%}">Sign up</a>
+          </li>
+          <li class="item">
           <a href="{% url 'login' %}">Login</a>
+          </li>
           {% if user.is_authenticated %}
-          <a href="/">logout</a>
+            <li class="list">
+            <a href="{% url 'home' %}">logout</a>
+            </li>
           {% endif %}
         </ul>
       </nav>
-    </div>
   </header>
-  <main>
 
   {% block content %}
   {% endblock %}
