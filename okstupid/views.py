@@ -38,6 +38,7 @@ def create_profile(request):
     if form.is_valid():
       profile = form.save(commit=False)
       profile.user_id = request.user
+      profile.photo_one = request.FILES["photo_one"]
       profile.save()
       profile = Profile.objects.get(user_id=request.user.id)
       context = {'profile':profile}

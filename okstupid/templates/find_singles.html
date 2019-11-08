@@ -7,7 +7,7 @@
       {% if user.is_authenticated %}
       Welcome, {{user.username}}
       <a href="/">logout</a>
-      <a href="{% url 'matches_list' %}">Matches</a>
+      {#<a href="{% url 'matches_list' %}">Matches</a>#}
       <a href="/singles">Singles List</a>
       {% else %}
       <a href="/register">Sign up</a>
