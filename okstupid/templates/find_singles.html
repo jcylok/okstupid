@@ -1,4 +1,4 @@
-{ % extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
@@ -20,9 +20,9 @@
 <ul>
   <h1>Check out these Stupids in your Area</h1>
   {% for profile in profiles%}
-  <a href="{% url 'profile' pk=profile.pk %}">
+  <a href="">
     <li>
-      <img src="{{profile.photo_one}}" alt="{{profile.name}">
+      <img src="https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080" alt="{{profile.name}">
       <p>{{profile.nickname}}</p>
       <p>{{profile.age}}</p>   
     </li>
@@ -30,4 +30,4 @@
   {% endfor %}
   </ul>
 </main>  
-{% endBlock %}
+{% endblock %}
