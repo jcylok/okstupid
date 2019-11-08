@@ -38,6 +38,7 @@ def create_profile(request):
     if form.is_valid():
       profile = form.save(commit=False)
       profile.user_id = request.user
+      profile.photo_one = request.FILES["photo_one"]
       profile.save()
       profile = Profile.objects.get(user_id=request.user.id)
       # context = {'profile':profile}
@@ -46,24 +47,6 @@ def create_profile(request):
     form = ProfileForm()
     context = {'form': form, 'header': 'Create Your Profile'}
     return render(request, 'profile_form.html', context)
-
-
-
-
-
-
-
-
-
-
-def profile_delete(request):
-  User.objects.get().delete()
-  return redirect('home')
-
-
-
-
-
 
 def singles_list(request):
   myprofile = Profile.objects.get(user_id=request.user)
@@ -84,6 +67,9 @@ def profile_delete(request, pk):
   User.objects.get(id=pk).delete()
   return render(request, 'home.html', {'pk': pk})
 
+<<<<<<< HEAD
 
 def matches(request):
   matches = Matched.objects.filter(profile_id_init=request.user.id, confirmed=True) | Matched.objects.filter(profile_id_connect=request.user.id)
+=======
+>>>>>>> submaster
