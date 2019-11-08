@@ -60,7 +60,7 @@ def singles_list(request):
 def profile_show(request, pk):
   profile = Profile.objects.get(id=pk)
   context = {'profile': profile}
-  return render(request, 'profile', context)
+  return render(request, 'profile.html', context)
 
 def profile_delete(request, pk):
   User.objects.get(id=pk).delete()
