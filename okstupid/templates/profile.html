@@ -1,17 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<nav>
-    <section>
-      <a href="{% url 'logout' %}">Logout</a>
-      <a href="{% url 'login' %}">find singles</a>
-      <a href="{% url 'login' %}">Matches</a>
-    </section>
-  </nav>
+
 <section class="form-section">
     Welcome, {{ profile.nickname }}
     <h1>Profile</h1>
     <ul>
+      <h2><a href="{% url 'profile_show' pk=profile.pk %}">{{ profile.nickname }}</a></h2>
       <li> Gender: {{ profile.gender}}</li>
       <li> Location: {{ profile.location}}</li>
       <li> Job Title: {{ profile.job_title}}</li>
