@@ -40,19 +40,42 @@ def create_profile(request):
       profile.user_id = request.user
       profile.save()
       profile = Profile.objects.get(user_id=request.user.id)
-      context = {'profile':profile}
-      return render(request, 'profile.html', context)
+      # context = {'profile':profile}
+      return redirect('singles_list')
   else:
     form = ProfileForm()
     context = {'form': form, 'header': 'Create Your Profile'}
     return render(request, 'profile_form.html', context)
 
-def singles_list(request):
-  profiles = Profile.objects.filter().exclude(user_id=request.user)
-  context = {'profiles': profiles}
-  return render(request, 'find_singles.html', context)
+
+
+
+
+
+
+
 
 
 def profile_delete(request):
   User.objects.get().delete()
   return redirect('home')
+
+
+
+
+
+
+def singles_list(request):
+  myprofile = Profile.objects.get(user_id=request.user)
+  profiles = Profile.objects.filter(
+    age__lte=myprofile.age_preference_max,
+    age__gte=myprofile.age_preference_min,
+    gender=myprofile.gender_preference
+    ).exclude(user_id=request.user)
+  context = {'profiles': profiles}
+  return render(request, 'find_singles.html', context)
+
+
+
+def matches(request):
+  matches = Matched.objects.filter(profile_id_init=request.user.id, confirmed=True) | Matched.objects.filter(profile_id_connect=request.user.id)

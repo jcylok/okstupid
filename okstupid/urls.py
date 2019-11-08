@@ -11,11 +11,11 @@ urlpatterns = [
   path('profile/edit', views.profile_edit, name='profile_edit'),
   path('profile/create', views.create_profile, name='create_profile'),
   path('profile/singles', views.singles_list, name='singles_list'),
-  path('profile/delete', views.profile_delete, name='profile_delete')
-  # path('profile/delete', views.profile_delete, name='profile_delete'),
+  path('profile/delete', views.profile_delete, name='profile_delete'),
+  path('profile/matches', views.matches, name='matches'),
 
   # path('profile/<int:pk>/', views.profile_show, name='profile_show'),
-  # path('profile/matches', views.matches, name='matches'),
+  
 
   # path('connected/<int:match_id>', views.profile_connected, name='profile_connected')
 
