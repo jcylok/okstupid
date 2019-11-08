@@ -32,7 +32,6 @@ def profile_edit(request):
 
 
 def create_profile(request):
-  print(request.user)
   if request.method == 'POST':
     form = ProfileForm(request.POST, request.FILES)
     if form.is_valid():

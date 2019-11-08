@@ -18,7 +18,8 @@
   {% for profile in profiles%}
   <a href="">
     <li>
-      <img src="/media/{{profile.photo_one}}" width="120" height="90" /> <p>{{profile.nickname}}</p>
+      <a href="{% url 'profile_show' pk=profile.pk %}"><p>{{profile.nickname}}</p></a>
+      <img src="/media/{{profile.photo_one}}" width="120" height="90"/>
       <p>{{profile.age}}</p>   
     </li>
   </a>
