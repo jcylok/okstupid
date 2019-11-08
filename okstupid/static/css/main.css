@@ -17,23 +17,24 @@
   box-sizing: border-box;
 }
 
-body {
-  /* background: var(--light-green); */
+
+header {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  height: 60vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
 }
 
 header {
-  /* background: url('../static/images/date.jpg') top center; */
-  margin-top: -10px;
-  text-decoration: none;
-  display: flex;
-  flex-wrap: wrap;
-  border-bottom: 1px solid black;
-  padding: 15px;
+  background-image: url('/static/images/date.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
   z-index: 1;
-}
-
-.header {
-  z-index: 2;
 }
 
 .container {
@@ -44,9 +45,22 @@ header {
 a {
   color: var(--green);
   padding: 5px;
-  display: inline;
   text-decoration: none;
-  
+  z-index: 2
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+}
+
+
+.item {
+  padding: 20px;
+  color: var(--green);
 }
 
 .navbar a {
@@ -61,6 +75,11 @@ a {
 
 .logo {
   font-family: 'Bowlby One SC', cursive;
+  display: flex;
+  align-items: center;
   /* margin-left: 40%; */
 }
 
+main {
+  margin-top: 30vh;
+}
