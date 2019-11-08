@@ -56,3 +56,9 @@ def singles_list(request):
 def profile_delete(request):
   User.objects.get().delete()
   return redirect('home')
+
+
+def profile_show(request, pk):
+  profile = Profile.objects.get(id=pk)
+  context = {'profile': profile}
+  return render(request, 'profile', context)
