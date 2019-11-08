@@ -53,6 +53,6 @@ def singles_list(request):
   return render(request, 'find_singles.html', context)
 
 
-def profile_delete(request):
-  User.objects.get().delete()
-  return redirect('home')
+def profile_delete(request, pk):
+  User.objects.get(id=pk).delete()
+  return render(request, 'home.html', {'pk': pk})
