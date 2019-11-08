@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth.models import User
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
   path('', views.home, name='home'),
@@ -16,4 +18,4 @@ urlpatterns = [
 
   # path('connected/<int:match_id>', views.profile_connected, name='profile_connected')
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
