@@ -11,30 +11,29 @@
   <title>Okstupid</title>
 </head>
 <body>
-  <header>
-
-    <img class='header' src="/static/images/date.jpg">
-    <h1 class="logo"><a href="{% url 'home'%}">OkStupid</a></h1>
-
-    <div class="container">
-      
-      <nav>
-        <ul class="navbar">
+  <section class="container">
+    <header>
+      <nav class="navhead">
+          <ul class="navbar">
+        <h1 class="logo"><a href="{% url 'home'%}">OkStupid</a></h1>
           <li class="item">
           <a href="{%url 'register'%}">Sign up</a>
           </li>
           <li class="item">
-          <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'login' %}">Login</a>
           </li>
           {% if user.is_authenticated %}
             <li class="list">
-            <a href="{% url 'home' %}">logout</a>
+             <a href="{% url 'home' %}">logout</a> 
             </li>
           {% endif %}
         </ul>
       </nav>
-  </header>
-  <main>
+
+    </header>
+  </section>
+
+
   {% block content %}
   {% endblock %}
 </body>
