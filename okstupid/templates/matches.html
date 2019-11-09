@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<nav>
-    <section>
-      {% if user.is_authenticated %}
-      <a href="/">logout</a>
-      <a href="{% url 'singles_list' %}">Singles List</a>
-      {% else %}
-      <a href="/register">Sign up</a>
-      <a href="/login">Login</a>
-      {% endif%}
-    </section>
-  </nav>
+<main>
+<ul>
+  <h2>see your matches!</h2>
+  {% for connection in connections %}
+  <section>
+  {{ connection.profile_id_connect }} 
+  
+  </section>  
+  {% endfor %}
+</ul>
+</main>
 
 
 

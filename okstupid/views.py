@@ -89,4 +89,9 @@ def match_handle(request, pk):
     pair.save()
     return redirect('singles_list')
 
-
+def matches_list(request):
+  myprofile = Profile.objects.get(user_id=request.user)
+  connections = Matched.objects.filter(profile_id_init=myprofile.user_id, confirmed=True) | Matched.objects.filter(profile_id_connect=myprofile.user_id, confirmed=True)
+  print(connections)
+  context = {'myprofile': myprofile, 'connections': connections }
+  return render(request, 'matches.html', context)
