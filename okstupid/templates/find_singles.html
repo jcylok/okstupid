@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block content %}
 
 <nav>
@@ -16,13 +15,16 @@
 <ul>
   <h2>Check out these Stupids in your Area</h2>
   {% for profile in profiles%}
-  <a href="">
-    <li>
-      <a href="{% url 'profile_show' pk=profile.pk %}"><p>{{profile.nickname}}</p></a>
-      <img src="/media/{{profile.photo_one}}" width="120" height="90"/>
-      <p>{{profile.age}}</p>   
-    </li>
-  </a>
+  <section>
+    <div class="card">
+      <img src="/media/{{profile.photo_one}}" width="120" height="120"/>
+      <div class="container">
+        <a href="{% url 'profile_show' pk=profile.pk %}"><h3 class="profile-photo">{{profile.nickname}}</h3></a>
+        <p>{{profile.location}}</p>
+        <p>{{profile.age}}</p>  
+      </div>  
+    </div>    
+  </section>  
   {% endfor %}
 </ul>
 </main>  
