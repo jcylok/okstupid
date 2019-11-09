@@ -1,3 +1,27 @@
+.header {
+	margin-bottom: 60px;
+}
+
+
+.findsingles-title {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.description {
+	text-align: center;
+	margin-bottom: ;
+}
+
+
+.image-area {
+	padding-left: 30px;
+}
+
+
+
+
+
 /* new card */
 *
 {
@@ -37,7 +61,7 @@
 {
 	height: 400px;
 	width: 300px;
-	filter: grayscale(100%);
+	/* filter: grayscale(100%); */
 	transition: 2s;
 }
 .img-wrapper:hover img
