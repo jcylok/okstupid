@@ -59,10 +59,45 @@ def singles_list(request):
 
 def profile_show(request, pk):
   profile = Profile.objects.get(id=pk)
-  context = {'profile': profile}
+  target_id = Profile.objects.get(id=pk).user_id
+  pair = None
+  if Matched.objects.filter(profile_id_init=target_id, profile_id_connect=request.user).exists():
+    pair = Matched.objects.get(profile_id_init=target_id, profile_id_connect=request.user)
+  if Matched.objects.filter(profile_id_init=request.user, profile_id_connect=target_id).exists():
+    pair = Matched.objects.get(profile_id_init=request.user, profile_id_connect=target_id)
+  print(pair)
+  context = {'profile': profile, 'pair': pair }
   return render(request, 'profile.html', context)
 
 def profile_delete(request, pk):
   User.objects.get(id=pk).delete()
   return render(request, 'home.html', {'pk': pk})
 
+def match_handle(request, pk):
+  my_id = request.user
+  target_id = Profile.objects.get(id=pk).user_id
+  if Matched.objects.filter(profile_id_init=my_id, profile_id_connect=target_id).exists() or Matched.objects.filter(profile_id_init=target_id, profile_id_connect=my_id).exists():
+    if Matched.objects.filter(profile_id_init=my_id, profile_id_connect=target_id).exists():
+      t = Matched.objects.filter(profile_id_init=my_id, profile_id_connect=target_id)
+      t.update(confirmed=True)
+    elif Matched.objects.filter(profile_id_init=target_id, profile_id_connect=my_id).exists():
+      t = Matched.objects.filter(profile_id_init=target_id, profile_id_connect=my_id)
+      t.update(confirmed=True)
+    return redirect('singles_list')
+  else:
+    pair = Matched(profile_id_init=my_id, profile_id_connect=target_id)
+    pair.save()
+    return redirect('singles_list')
+
+def matches_list(request):
+  myprofile = Profile.objects.get(user_id=request.user)
+  connections = Matched.objects.filter(profile_id_init=myprofile.user_id, confirmed=True) | Matched.objects.filter(profile_id_connect=myprofile.user_id, confirmed=True)
+  myloves = []
+  for connection in connections:
+    if connection.profile_id_init != request.user:
+      myloves.append(connection.profile_id_init)
+    if connection.profile_id_connect != request.user:
+      myloves.append(connection.profile_id_connect)
+  myloves_profiles = Profile.objects.filter(user_id__in = myloves)
+  context = {'myprofile': myprofile, 'myloves_profiles': myloves_profiles }
+  return render(request, 'matches.html', context)

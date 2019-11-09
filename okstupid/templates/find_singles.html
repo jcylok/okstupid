@@ -1,6 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<nav>
+    <section>
+      {% if user.is_authenticated %}
+      <ul>
+        <li>
+          {#<a href="{% url 'matches_list' %}">Matches</a>#}
+        </li>
+        <li class="list">
+            {#<a href="{% url 'matches_list' %}">Matches</a>#}
+          </li>
+          <li class="list">
+            <p><a href="{% url 'profile_edit' %}">Edit My Profile</a></p>
+          </li>
+          <li class="list">
+            <p><a href="{% url 'profile' %}">My Profile</a></p>
+          </li>
+      </ul>
+      {% endif%}
+    </section>
+  </nav>
 
 <main>
   <h2 class="findsingles-title">Check out these Stupids in your Area</h2>
