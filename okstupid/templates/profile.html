@@ -13,6 +13,17 @@
       <li> Education: {{ profile.education}}</li>
       <li> Hometown: {{ profile.hometown}}</li>
     </ul>
-  </section>
+</section>
+<div class="action">
+{% if request.user != profile.user_id %}
+    {% if pair is None %}
+    <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">LIKE</a>
+    {% elif pair.confirmed == False and pair.profile_id_connect == request.user %}
+    <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">LIKE2</a>
+    {% elif pair.confirmed == False and pair.profile_id_init == request.user %}
+    <p>you've like this person.</p>
+    {% endif %}
+{% endif %}
+</div>
 
 {% endblock %}
