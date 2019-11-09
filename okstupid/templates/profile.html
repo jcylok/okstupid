@@ -3,7 +3,9 @@
 {% block content %}
 
 <section class="form-section">
+    {% if request.user == profile.user_id %}
     Welcome, {{ profile.nickname }}
+    {% endif %}
     <h1>Profile</h1>
     <ul>
       <h2>{{ profile.nickname }}</h2>
@@ -22,6 +24,8 @@
     <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">LIKE2</a>
     {% elif pair.confirmed == False and pair.profile_id_init == request.user %}
     <p>you've like this person.</p>
+    {% else %}
+    <p>your've liked this person.</p>
     {% endif %}
 {% endif %}
 </div>
