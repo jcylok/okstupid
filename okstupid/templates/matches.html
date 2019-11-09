@@ -3,10 +3,10 @@
 {% block content %}
 <main>
 <ul>
-  <h2>see your matches!</h2>
-  {% for connection in connections %}
+  <h2>See your matches!</h2>
+  {% for mymatch in mymatches %}
   <section>
-  {{ connection.profile_id_connect }} 
+  {{ mymatch.nickname }} 
   
   </section>  
   {% endfor %}

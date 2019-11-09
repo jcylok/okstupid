@@ -92,6 +92,12 @@ def match_handle(request, pk):
 def matches_list(request):
   myprofile = Profile.objects.get(user_id=request.user)
   connections = Matched.objects.filter(profile_id_init=myprofile.user_id, confirmed=True) | Matched.objects.filter(profile_id_connect=myprofile.user_id, confirmed=True)
-  print(connections)
-  context = {'myprofile': myprofile, 'connections': connections }
+  myloves = []
+  for connection in connections:
+    if connection.profile_id_init != request.user:
+      myloves.append(connection.profile_id_init)
+    if connection.profile_id_connect != request.user:
+      myloves.append(connection.profile_id_connect)
+  mymatches = Profile.objects.filter(user_id = myloves[1])
+  context = {'myprofile': myprofile, 'mymatches': mymatches }
   return render(request, 'matches.html', context)

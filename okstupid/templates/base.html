@@ -22,16 +22,19 @@
       <nav class="navhead">
           <ul class="navbar">
         <h1 class="logo"><a href="{% url 'home'%}">OkStupid</a></h1>
-          <li class="item">
-          <a href="{% url 'register' %}">Sign up</a>
-          </li>
-          <li class="item">
-            <a href="{% url 'login' %}">Login</a>
-          </li>
+
           {% if user.is_authenticated %}
-            <li class="list">
-             <a href="{% url 'home' %}">logout</a> 
+            <li class="item">
+               <a href="{% url 'logout' %}">logout</a> 
             </li>
+          {% else %}
+             <li class="item">
+               <a href="{% url 'register' %}">Sign up</a>
+             </li>
+             <li class="item">
+               <a href="{% url 'login' %}">Login</a>
+             </li>
+
           {% endif %}
         </ul>
       </nav>
