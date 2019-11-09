@@ -4,7 +4,7 @@
 
 <section class="form-section">
     {% if request.user == profile.user_id %}
-    Welcome, {{ profile.nickname }}
+    Welcome, {{ user.first_name }}
     <div><a href="{% url 'profile_edit' %}">Edit My Profile</a></div>
     <div><a href="{% url 'singles_list' %}">Find Sinlges</a></div>
     <div><a href="{% url 'matches_list' %}">My Matches</a></div>
@@ -28,7 +28,7 @@
     {% elif pair.confirmed == False and pair.profile_id_connect == request.user %}
     <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">LIKE2</a>
     {% elif pair.confirmed == False and pair.profile_id_init == request.user %}
-    <p>you've like this person.</p>
+    <p>you've likeed this person.</p>
     {% else %}
     <p>your've liked this person.</p>
     {% endif %}

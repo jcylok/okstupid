@@ -98,6 +98,6 @@ def matches_list(request):
       myloves.append(connection.profile_id_init)
     if connection.profile_id_connect != request.user:
       myloves.append(connection.profile_id_connect)
-  mymatches = Profile.objects.filter(user_id = myloves[1])
-  context = {'myprofile': myprofile, 'mymatches': mymatches }
+  myloves_profiles = Profile.objects.filter(user_id__in = myloves)
+  context = {'myprofile': myprofile, 'myloves_profiles': myloves_profiles }
   return render(request, 'matches.html', context)

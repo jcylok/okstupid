@@ -4,7 +4,7 @@
 <nav>
     <section>
       {% if user.is_authenticated %}
-      Welcome, {{user.username}}
+      Welcome, {{user.firstname}}
       {#<a href="{% url 'matches_list' %}">Matches</a>#}
       <p><a href="{% url 'profile' %}">My Profile</a></p>
       {% endif%}
