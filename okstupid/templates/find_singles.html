@@ -4,28 +4,39 @@
 <nav>
     <section>
       {% if user.is_authenticated %}
-      Welcome, {{user.firstname}}
-      {#<a href="{% url 'matches_list' %}">Matches</a>#}
-      <p><a href="{% url 'profile' %}">My Profile</a></p>
+      <ul>
+        <li>
+          {#<a href="{% url 'matches_list' %}">Matches</a>#}
+        </li>
+        <li class="list">
+            {#<a href="{% url 'matches_list' %}">Matches</a>#}
+          </li>
+          <li class="list">
+            <p><a href="{% url 'profile_edit' %}">Edit My Profile</a></p>
+          </li>
+          <li class="list">
+            <p><a href="{% url 'profile' %}">My Profile</a></p>
+          </li>
+      </ul>
       {% endif%}
     </section>
   </nav>
 
 <main>
-<ul>
-  <h2>Check out these Stupids in your Area</h2>
+  <h2 class="findsingles-title">Check out these Stupids in your Area</h2>
   {% for profile in profiles%}
-  <section>
-    <div class="card">
-      <img src="/media/{{profile.photo_one}}" width="120" height="120"/>
-      <div class="container">
-        <a href="{% url 'profile_show' pk=profile.pk %}"><h3 class="profile-photo">{{profile.nickname}}</h3></a>
-        <p>{{profile.location}}</p>
-        <p>{{profile.age}}</p>  
-      </div>  
-    </div>    
+  <section class="profile-list"> 
+    <div class="image-area">
+      <div class="img-wrapper">
+          <img src="/media/{{profile.photo_one}}"/>
+        <h2>
+          <a href="{% url 'profile_show' pk=profile.pk %}" class="card-content"><p>{{profile.nickname}}</p></a>
+          <p class="card-content">{{profile.location}}</p>
+          <p class="card-content">{{profile.age}}</p> 
+        </h2>   
+        </div>
+      </div>
   </section>  
   {% endfor %}
-</ul>
 </main>  
 {% endblock %}
