@@ -4,9 +4,9 @@
 <nav>
     <section>
       {% if user.is_authenticated %}
-      Welcome, {{user.username}}
+      Welcome, {{user.firstname}}
       {#<a href="{% url 'matches_list' %}">Matches</a>#}
-      <p><a href="{% url 'profile_edit' %}">Edit My Profile</a></p>
+      <p><a href="{% url 'profile' %}">My Profile</a></p>
       {% endif%}
     </section>
   </nav>
@@ -26,6 +26,6 @@
     </div>    
   </section>  
   {% endfor %}
-  </ul>
+</ul>
 </main>  
 {% endblock %}
