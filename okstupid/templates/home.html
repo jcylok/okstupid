@@ -4,24 +4,50 @@
 <main class='home'>
   <section class="container">
     <div class="mission container2">
-      <h2 class="our-mission">Our mission</h2>
-      <p>A simple dating platform for our non-simple lifestyles.</p>
-      <br>
-      <ul>
-        <li>If walking up to girls at a bar makes your head spin…</li>
-        <li>If asking for his number makes your palms sweat…</li>
-        <li>If your overworked and underpaid lifestyle has gotten in the way of your love life one to many times…</li>
-      </ul>
-      <br>
-      <p>Let us make finding love a little more simple.</p>
+      <div>
+        <h2 class="our-mission">Our mission</h2>
+        <p>A simple dating platform for our non-simple lifestyles.</p>
+        <br>
+        <ul>
+          <li>If walking up to girls at a bar makes your head spin…</li>
+          <li>If asking for his number makes your palms sweat…</li>
+          <li>If your overworked and underpaid lifestyle has gotten in the way of your love life one to many times…</li>
+        </ul>
+        <br>
+        <p>Let us make finding love a little more simple.</p>
+      </div>
     </div>
     
     <div class="buttons container2">
+      {% if user.is_authenticated %}
+      <p><a class="button" href="{% url 'logout' %}">Logout</a></p>
+      <br>
+      {% else %}
       <p><a class="button" href="{% url 'login' %}">Login</a></p>
       <br>
       <p><a class="button" href="{% url 'register' %}">Sign Up</a></p>
+      {% endif %}
     </div>
   </section>
+
+  <section class="creators">
+    <div class="creator">
+      <img src="/static/images/jack.png" alt="creator" height="300" width="300">
+      <h3>Jack Lok</h3>
+      <p>Part-time Software Engineer, Full-time playboy. Enjoyed creating OkStupid, but has no intensions of finding love here.</p>
+    </div>
+    <div class="creator">
+      <img src="/static/images/ali.png" alt="creator" height="300" width="300">
+      <h3>Ali Stoltz</h3>
+      <p>Full Stack Developer in Denver, Co. When she's not aggresively coding, shes drinking wine with the significant other she met here on OkStupid.</p>
+    </div>
+    <div class="creator">
+      <img src="/static/images/adonis.png" alt="creator"height="300" width="300">
+      <h3>Adonis Martin</h3>
+      <p>Software Engineer in San Francisco, Ca who found the love of his life creating this Dating app.</p>
+    </div>
+  </section>
+
 </main>
 
 {% endblock %}
