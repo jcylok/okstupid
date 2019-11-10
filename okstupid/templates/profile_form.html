@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<main>
 <section>
     <h1>{{ header }}</h1>
     <form method="POST" enctype="multipart/form-data">
@@ -14,5 +15,5 @@
         </button>
         {% endif %}
 </section>
-
+</main>
 {% endblock %}
