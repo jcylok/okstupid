@@ -44,6 +44,10 @@ header {
   z-index: 1;
 }
 
+/* .opacity {
+  background: rgba(104, 117, 106, .6)
+} */
+
 .home .cta {
   position: relative;
   z-index: 2;
