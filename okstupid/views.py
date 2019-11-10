@@ -40,7 +40,6 @@ def create_profile(request):
       profile.photo_one = request.FILES["photo_one"]
       profile.save()
       profile = Profile.objects.get(user_id=request.user.id)
-      # context = {'profile':profile}
       return redirect('singles_list')
   else:
     form = ProfileForm()
