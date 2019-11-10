@@ -14,10 +14,19 @@
 </nav>
 
 <main>
+
   <div class="header">
     <h2 class="findsingles-title">Check out these Stupids in your Area</h2>
     <p class= "description"> Practice makes perfect.</p>
   </div>
+
+      
+
+
+
+
+
+
   <section class="profile-list"> 
   {% for profile in profiles %}
     <div class="image-area">
@@ -34,17 +43,9 @@
   {% endfor %}
 
 
-  <div class="row">
-      {% for profile in profiles %}
-          <div class="three columns">{{ profile.age }}
-          </div>
-          {% if forloop.counter|divisibleby:3 %}
-      </div>
-      <div class="row">
-          {% endif %}
-      {% endfor %}
-    </div>
 
+
+ 
 
 
 </main>  

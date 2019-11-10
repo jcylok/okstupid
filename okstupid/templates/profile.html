@@ -2,11 +2,15 @@
 
 {% block content %}
 
-<section class="form-section">
+<div>
     {% if request.user == profile.user_id %}
     <div><a href="{% url 'profile_edit' %}">Edit My Profile</a></div>
     <div><a href="{% url 'singles_list' %}">Find Sinlges</a></div>
     <div><a href="{% url 'matches_list' %}">My Matches</a></div>
+
+
+    
+
     {% endif %}
     <h1>Profile</h1>
     <ul>
@@ -19,7 +23,11 @@
       <img src="/media/{{profile.photo_one}}" width="120" height="120"/>
       
     </ul>
-</section>
+
+    
+
+      
+  </div>
 <div class="action">
 {% if request.user != profile.user_id %}
     {% if pair is None %}
