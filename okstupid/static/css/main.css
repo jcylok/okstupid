@@ -63,7 +63,7 @@ a {
 }
 
 
-/* .navbar {
+.navbar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,7 +86,7 @@ a {
 .navbar a:hover {
   font-size: 22px;
   transition: .2s linear;
-} */
+} 
 
 
 
