@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<main class="form-layout">
+    <section class="aside">
+        <h1>here</h1>
+    </section>
   {% if error %}
     <p style="background-color:firebrick;">{{error}}</p>
   {% endif %}
@@ -19,5 +22,5 @@
       <button type="submit">Login</button>
     </form>
   </section>
-
+</main>
 {% endblock %}

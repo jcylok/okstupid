@@ -1,6 +1,12 @@
 {% extends 'base.html' %} 
 {% block content %}
-
+<div class="container-layout">
+    <main class="left-side">
+            <h1>
+            <p>left-side</p>
+            </h1>
+        </main>
+    <aside class=" right-side form-layout">
     {% if error %}
     <p style="background-color: firebrick;">{{error}}</p>
     {% endif %}
@@ -32,8 +38,9 @@
                 <label for="password2">Confirm Password</label>
                 <input class="form-control" type="password" name="password2" required maxlength="25" minlength="4">
             </p>
-            <button type="submit">Register</button>
+            <button class="btn btn-danger" type="submit">Register</button>
         </form>
     </section>
-
+    </aside>
+</div>
 {% endblock %}

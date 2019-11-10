@@ -1,7 +1,35 @@
 .form-group{
   position: absolute;
   top: 30%;
-  left: 60%;
+  left: 70%;
+  padding: 25px;
 }
 
+.form-control {
+  background-color: none im;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom:2px solid black !important;
+  background: rgba(0, 0, 0, 0.5);
+}
+.left-side {
+  background-image: url("/static/images/background2.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 100vw;
+}
+
+
+.btn{
+  margin-left: 56%;
+}
+
+
+.container-layout{
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
 
