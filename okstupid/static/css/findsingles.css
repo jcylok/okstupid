@@ -1,11 +1,11 @@
-/* new card */
-*
+.image-area
 {
-	background: #f1f2f6;
-	margin: 0;
-	padding: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
 }
-  
+
 .img-wrapper
 {
 	width: 300px;
@@ -48,7 +48,7 @@
 
 .img-wrapper h2
 {
-	background: tomato;
+	background: red;
 	font-family: Poppins;
 	color: #fff;
 	text-align: center;
