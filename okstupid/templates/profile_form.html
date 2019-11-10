@@ -2,9 +2,6 @@
 
 {% block content %}
 <main class="form-layout">
-        <section class="aside">
-                <h1>here</h1>
-            </section>
 <section class="form-group">
     <h1>{{ header }}</h1>
     <form method="POST" enctype="multipart/form-data">
@@ -85,10 +82,10 @@
             <label for="gender_preference">Gender Preference (M/F)</label>
             <input class="form-control" type="text" name="gender_preference" required maxlength="1" minlength="1" value="{{ profile.gender_preference }}">
         </p>
-    <button type="submit">Save</button>
+    <button class="btn btn-danger" type="submit">Save</button>
     </form>
         {% if user.is_authenticated %}
-    <button>
+    <button class="btn btn-danger">
     <a href="{% url 'profile_delete' pk=user.pk %}">Delete My Account</a>
     </button>
     {% endif %}

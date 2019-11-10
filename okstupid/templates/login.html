@@ -1,26 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main class="form-layout">
-    <section class="aside">
-        <h1>here</h1>
-    </section>
+<main class="login-background form-layout">
   {% if error %}
     <p style="background-color:firebrick;">{{error}}</p>
   {% endif %}
-  <section class="form-group">
+  <div class="test">
+  <section class="form-group login-form">
     <form action="{% url 'login' %}" method="POST">
       {% csrf_token %}
       <p>
         <label for="username">Username</label>
-        <input class="form-control" type="text" name="username" maxlength="25" minlength="2" required>
+        <input class="log form-control form-control-lg" type="text" name="username" maxlength="25" minlength="2" required>
       </p>
       <p>
         <label for="password">Password</label>
-        <input class="form-control" type="password" name="password" maxlength="25" minlength="4" required>
+        <input class="log form-control form-control-lg" type="password" name="password" maxlength="25" minlength="4" required>
       </p>
-      <button type="submit">Login</button>
+      <button class="btn btn-danger" type="submit">Login</button>
     </form>
   </section>
+</div>
 </main>
 {% endblock %}
