@@ -84,6 +84,3 @@ def profile_form(request):
     age_preference_max = request.POST['age_preference_max']
     age_preference_min = request.POST['age_preference_min']
     gender_preference = request.POST['gender_preference']
-    if Profile.objects.filter(user_id=user_id).exists():
-      context = {'error': 'something went wrong'}
-      return render(request, 'profile_form.html', context)
