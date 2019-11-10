@@ -2,26 +2,52 @@
 
 {% block content %}
 
-<main>
-<div>
-
-    <h1>Profile</h1>
-    <ul>
-      <h2>{{ profile.nickname }}</h2>
-      <li> Gender: {{ profile.gender}}</li>
-      <li> Location: {{ profile.location}}</li>
-      <li> Job Title: {{ profile.job_title}}</li>
-      <li> Education: {{ profile.education}}</li>
-      <li> Hometown: {{ profile.hometown}}</li>
-      <img src="/media/{{profile.photo_one}}" width="120" height="120"/>
-      
-    </ul>
-
-    
-
-      
+<main class="profile">
+  <h2>{{ profile.nickname }} {{ profile.age }}</h2>
+  <div class="photos">
+      <img src="/media/{{profile.photo_one}}" width="450" height="420"/>
   </div>
-<div class="action">
+<br>
+  <div class="prompts">
+    <h4>Where is your ideal first date?</h4>
+    <p>{{ profile.prompt_one }}</p>
+  </div>
+<br>
+  <div class="photos">
+    <img src="/media/{{profile.photo_two}}" width="450" height="420"/>
+  </div>
+<br>
+  <div class="about">
+      <ul>
+        <li> Height: {{ profile.height }}</li>
+        <li> Location: {{ profile.location }}</li>
+        <li> Job Title: {{ profile.job_title }}</li>
+        <li> Education: {{ profile.education }}</li>
+        <li> Hometown: {{ profile.hometown }}</li>
+        {% if profile.drinker %}
+        <li>I am a drinker.</li>
+        {% endif %}
+        {% if profile.smoker %}
+        <li>I am a Smoker.</li>
+        {% endif %}
+      </ul>
+  </div>
+<br>
+  <div class="propmts">
+    <h4>My friends would say I’m…</h4>
+    <p>{{ profile.prompt_two }}</p>
+  </div>
+<br>
+  <div class="photos">
+      <img src="/media/{{profile.photo_three}}" width="450" height="420"/>
+  </div>
+<br>
+  <div class="prompts">
+    <h4>If money didn’t matter, my dream job would be…</h4>
+    <p>{{ profile.prompt_three }}</p>
+  </div>
+<br>
+  <div class="action">
 {% if request.user != profile.user_id %}
     {% if pair is None %}
     <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">LIKE</a>
