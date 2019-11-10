@@ -7,15 +7,14 @@
   <section>
     <ul>
       <li>
-          {{ myloves_profile.nickname }}
-          <div>
-             <a href="{% url 'profile_show' pk=myloves_profile.id %}">
-                <img src="/media/{{myloves_profile.photo_one}}" width="120" height="120"/>
-             </a>
-          </div>
+        {{ myloves_profile.nickname }}
+        <div>
+          <a href="{% url 'profile_show' pk=myloves_profile.id %}">
+            <img src="/media/{{myloves_profile.photo_one}}" width="120" height="120"/>
+          </a>
+        </div>
       </li>
     </ul>
-
   </section>  
   {% endfor %}
 </main>

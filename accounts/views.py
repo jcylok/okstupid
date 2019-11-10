@@ -61,26 +61,3 @@ def login(request):
 def logout(request):
   auth.logout(request)
   return redirect('home')
-
-
-def profile_form(request):
-  if request.method == 'POST':
-    nickname = request.POST['nickname']
-    gender = request.POST['gender']
-    age = request.POST['age']
-    height = request.POST['height']
-    location = request.POST['location']
-    job_title = request.POST['job_title']
-    education = request.POST['education']
-    hometown = request.POST['hometown']
-    drinker = request.POST['drinker']
-    smoker = request.POST['smoker']
-    photo_one = request.POST['photo_one']
-    photo_two = request.POST['photo_two']
-    photo_three = request.POST['photo_three']
-    prompt_one = request.POST['prompt_one']
-    prompt_two = request.POST['prompt_two']
-    prompt_three = request.POST['prompt_three']
-    age_preference_max = request.POST['age_preference_max']
-    age_preference_min = request.POST['age_preference_min']
-    gender_preference = request.POST['gender_preference']
