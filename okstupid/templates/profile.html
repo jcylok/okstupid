@@ -1,23 +1,40 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<nav>
-    <section>
-      <a href="{%url 'logout'%}">Logout</a>
-      <a href="{%url 'register'%}">find singles</a>
-      <a href="{% url 'login' %}">Matches</a>
-    </section>
-  </nav>
-<section class="form-section">
-    Welcome, {{ profile.nickname }}
+
+<main>
+<div>
+
     <h1>Profile</h1>
     <ul>
+      <h2>{{ profile.nickname }}</h2>
       <li> Gender: {{ profile.gender}}</li>
       <li> Location: {{ profile.location}}</li>
       <li> Job Title: {{ profile.job_title}}</li>
       <li> Education: {{ profile.education}}</li>
       <li> Hometown: {{ profile.hometown}}</li>
+      <img src="/media/{{profile.photo_one}}" width="120" height="120"/>
+      
     </ul>
-  </section>
+
+    
+
+      
+  </div>
+<div class="action">
+{% if request.user != profile.user_id %}
+    {% if pair is None %}
+    <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">LIKE</a>
+    {% elif pair.confirmed == False and pair.profile_id_connect == request.user %}
+    <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">LIKE2</a>
+    {% elif pair.confirmed == False and pair.profile_id_init == request.user %}
+    <p>you've likeed this person.</p>
+    {% else %}
+    <p>your've liked this person.</p>
+    {% endif %}
+{% endif %}
+</div>
+
+</main>
 
 {% endblock %}

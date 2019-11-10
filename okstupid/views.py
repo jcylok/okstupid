@@ -32,33 +32,71 @@ def profile_edit(request):
 
 
 def create_profile(request):
-  print(request.user)
   if request.method == 'POST':
-    form = ProfileForm(request.POST)
+    form = ProfileForm(request.POST, request.FILES)
     if form.is_valid():
       profile = form.save(commit=False)
       profile.user_id = request.user
       profile.photo_one = request.FILES["photo_one"]
       profile.save()
       profile = Profile.objects.get(user_id=request.user.id)
-      context = {'profile':profile}
-      return render(request, 'profile.html', context)
+      return redirect('singles_list')
   else:
     form = ProfileForm()
     context = {'form': form, 'header': 'Create Your Profile'}
     return render(request, 'profile_form.html', context)
 
 def singles_list(request):
-  profiles = Profile.objects.filter().exclude(user_id=request.user)
+  myprofile = Profile.objects.get(user_id=request.user)
+  profiles = Profile.objects.filter(
+    age__lte=myprofile.age_preference_max,
+    age__gte=myprofile.age_preference_min,
+    gender=myprofile.gender_preference
+    ).exclude(user_id=request.user)
   context = {'profiles': profiles}
   return render(request, 'find_singles.html', context)
 
 def profile_show(request, pk):
   profile = Profile.objects.get(id=pk)
-  context = {'profile': profile}
-  return render(request, 'profile', context)
+  target_id = Profile.objects.get(id=pk).user_id
+  pair = None
+  if Matched.objects.filter(profile_id_init=target_id, profile_id_connect=request.user).exists():
+    pair = Matched.objects.get(profile_id_init=target_id, profile_id_connect=request.user)
+  if Matched.objects.filter(profile_id_init=request.user, profile_id_connect=target_id).exists():
+    pair = Matched.objects.get(profile_id_init=request.user, profile_id_connect=target_id)
+  print(pair)
+  context = {'profile': profile, 'pair': pair }
+  return render(request, 'profile.html', context)
 
 def profile_delete(request, pk):
   User.objects.get(id=pk).delete()
   return render(request, 'home.html', {'pk': pk})
 
+def match_handle(request, pk):
+  my_id = request.user
+  target_id = Profile.objects.get(id=pk).user_id
+  if Matched.objects.filter(profile_id_init=my_id, profile_id_connect=target_id).exists() or Matched.objects.filter(profile_id_init=target_id, profile_id_connect=my_id).exists():
+    if Matched.objects.filter(profile_id_init=my_id, profile_id_connect=target_id).exists():
+      t = Matched.objects.filter(profile_id_init=my_id, profile_id_connect=target_id)
+      t.update(confirmed=True)
+    elif Matched.objects.filter(profile_id_init=target_id, profile_id_connect=my_id).exists():
+      t = Matched.objects.filter(profile_id_init=target_id, profile_id_connect=my_id)
+      t.update(confirmed=True)
+    return redirect('singles_list')
+  else:
+    pair = Matched(profile_id_init=my_id, profile_id_connect=target_id)
+    pair.save()
+    return redirect('singles_list')
+
+def matches_list(request):
+  myprofile = Profile.objects.get(user_id=request.user)
+  connections = Matched.objects.filter(profile_id_init=myprofile.user_id, confirmed=True) | Matched.objects.filter(profile_id_connect=myprofile.user_id, confirmed=True)
+  myloves = []
+  for connection in connections:
+    if connection.profile_id_init != request.user:
+      myloves.append(connection.profile_id_init)
+    if connection.profile_id_connect != request.user:
+      myloves.append(connection.profile_id_connect)
+  myloves_profiles = Profile.objects.filter(user_id__in = myloves)
+  context = {'myprofile': myprofile, 'myloves_profiles': myloves_profiles }
+  return render(request, 'matches.html', context)

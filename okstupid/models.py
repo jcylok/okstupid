@@ -37,3 +37,6 @@ class Matched(models.Model):
   profile_id_init = models.ForeignKey(User, on_delete=models.CASCADE, related_name='sender')
   profile_id_connect = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reciever')
   confirmed = models.BooleanField(default=False)
+
+  def __str__(self):
+    return f"{self.profile_id_init} - {self.profile_id_connect} - {self.confirmed}"

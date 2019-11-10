@@ -1,0 +1,114 @@
+
+:root {
+  --green: #8bb174; 
+  --light-green: rgba(181, 202, 141, .5);
+  --ocean: #426b69;
+  --dark-blue: #222e50;
+  --forrest-blue: rgba(42, 72, 73, .6);
+  --light-black: rgb(21, 16, 67);
+  --navy: #403565;
+
+  /* font colors */
+  --grey: rgb(62, 59, 59);
+  --blue: rgb(45, 45, 138);
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+/* body {
+  padding-top: 100px;
+} */
+
+
+header {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  position: fixed;
+}
+
+.home header {
+  background-image: url('/static/images/date.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.home .cta {
+  position: relative;
+  z-index: 2;
+}
+
+
+.container {
+  margin-left: 80%;
+  margin-right: auto;
+  
+}
+
+a {
+  color: var(--navy);
+  padding: 5px;
+  text-decoration: none;
+  z-index: 2
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+}
+
+
+.item {
+  padding: 20px;
+  color: var(--green);
+
+}
+
+.navbar a {
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar a:hover {
+  font-size: 22px;
+  transition: .2s linear;
+} 
+
+
+
+.logo {
+  font-family: 'Bowlby One SC', cursive;
+  display: flex;
+  align-items: center;
+}
+
+main {
+  margin-top: 30vh;
+}
+
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #403565;
+  color: white;
+  text-align: center;
+}
+
