@@ -1,3 +1,4 @@
+
 :root {
   --green: #8bb174; 
   --light-green: rgba(181, 202, 141, .5);
@@ -18,9 +19,9 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   padding-top: 100px;
-}
+} */
 
 
 header {
@@ -111,3 +112,4 @@ footer{
   color: white;
   text-align: center;
 }
+

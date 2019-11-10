@@ -1,40 +1,11 @@
-* {
-	margin:0 px;
-}
-
-
-.header {
-	margin-bottom: 60px;
-}
-
-
-.findsingles-title {
-	text-align: center;
-	margin-bottom: 10px;
-}
-
-.description {
-	text-align: center;
-	margin-bottom: ;
-}
-
-
-.image-area {
-	padding-left: 30px;
-}
-
-
-
-
-
-/* new card */
-*
+.image-area
 {
-	background: #f1f2f6;
-	margin: 0;
-	padding: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
 }
-  
+
 .img-wrapper
 {
 	width: 300px;
@@ -66,7 +37,7 @@
 {
 	height: 400px;
 	width: 300px;
-	/* filter: grayscale(100%); */
+	filter: grayscale(100%);
 	transition: 2s;
 }
 .img-wrapper:hover img
@@ -77,7 +48,7 @@
 
 .img-wrapper h2
 {
-	background: tomato;
+	background: red;
 	font-family: Poppins;
 	color: #fff;
 	text-align: center;

@@ -1,17 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<nav>
-    <section>
-      {% if user.is_authenticated %}
-      <ul>
-          <li class="list">
-            <p><a href="{% url 'profile' %}">My Profile</a></p>
-          </li>
-      </ul>
-      {% endif %}
-    </section>
-</nav>
+
 
 <main>
 

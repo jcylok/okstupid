@@ -2,16 +2,9 @@
 
 {% block content %}
 
+<main>
 <div>
-    {% if request.user == profile.user_id %}
-    <div><a href="{% url 'profile_edit' %}">Edit My Profile</a></div>
-    <div><a href="{% url 'singles_list' %}">Find Sinlges</a></div>
-    <div><a href="{% url 'matches_list' %}">My Matches</a></div>
 
-
-    
-
-    {% endif %}
     <h1>Profile</h1>
     <ul>
       <h2>{{ profile.nickname }}</h2>
@@ -41,5 +34,7 @@
     {% endif %}
 {% endif %}
 </div>
+
+</main>
 
 {% endblock %}
