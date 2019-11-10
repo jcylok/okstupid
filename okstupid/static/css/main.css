@@ -5,6 +5,7 @@
   --dark-blue: #222e50;
   --forrest-blue: rgba(42, 72, 73, .6);
   --light-black: rgb(21, 16, 67);
+  --navy: #403565;
 
   /* font colors */
   --grey: rgb(62, 59, 59);
@@ -54,7 +55,7 @@ header {
 }
 
 a {
-  color: var(--green);
+  color: var(--navy);
   padding: 5px;
   text-decoration: none;
   z-index: 2
