@@ -5,6 +5,7 @@
   --dark-blue: #222e50;
   --forrest-blue: rgba(42, 72, 73, .6);
   --light-black: rgb(21, 16, 67);
+  --navy: #403565;
 
   /* font colors */
   --grey: rgb(62, 59, 59);
@@ -30,6 +31,7 @@ header {
   right: 0;
   z-index: 10;
   display: flex;
+  position: fixed;
 }
 
 .home header {
@@ -46,15 +48,6 @@ header {
   z-index: 2;
 }
 
-/* .navhead {
-  background-color: var(--forrest-blue);
-  max-width: 600px;
-  max-height: 600px;
-  padding: 5%;
-  position: relative;
-  top: 30%;
-  left: 10%;
-} */
 
 .container {
   margin-left: 80%;
@@ -62,15 +55,12 @@ header {
 }
 
 a {
-  color: var(--green);
+  color: var(--navy);
   padding: 5px;
   text-decoration: none;
   z-index: 2
 }
 
-/* nav {
-  padding: 5px;
-} */
 
 .navbar {
   display: flex;
@@ -89,7 +79,6 @@ a {
 .navbar a {
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
-  /* text-decoration: none; */
 }
 
 .navbar a:hover {
@@ -105,7 +94,9 @@ a {
 
 main {
   margin-top: 30vh;
+ 
 }
+
 
 footer{
   position: fixed;

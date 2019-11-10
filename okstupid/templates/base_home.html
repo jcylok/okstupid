@@ -7,15 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{% static  'css/main.css' %}">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
   <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Poppins:400,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bad+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
   <title>Okstupid</title>
 </head>
 <body class="home">
 
     <section class="container">
       <header>
+        <nav class="home-nav">
+          <img src="/static/images/logo.png" alt="logo" width="160" height="160">
+          <h1>OkStupid</h1>
+        </nav>
       </header>
     </section>
+
+    
 
   <section class="cta">
     {% block content %}
