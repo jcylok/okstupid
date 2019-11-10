@@ -11,13 +11,24 @@
   --light-blue-fade: rgba(173, 178, 247, 0.55);
 }
 
-
-
-.profile {
-  background-color: rgba(255, 192, 203, .55);
-  text-align: center;
+.background {
+  background: url('/static/images/background-image.jpg') no-repeat center fixed;
+  background-size: cover;
+  z-index: 1;
 }
 
+.profile {
+  background: rgba(128, 128, 128, .55);
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+}
+
+.profile img {
+  border: 2px solid black;
+}
 
 .about ul {
   list-style: none;
@@ -45,4 +56,6 @@
 .profile p {
   font-size: 18px;
   font-family: Poppins;
+  color: white;
 }
+
