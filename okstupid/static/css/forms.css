@@ -1,7 +1,65 @@
+/* overwrite bootstrap */
+.form-control {
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom:2px solid black !important;
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .form-group{
   position: absolute;
-  top: 30%;
-  left: 60%;
+  top: 15%;
+  left: 65%;
+  width: 30%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+/* register page */
+.resgiter-back{
+  background: url('/static/images/flowers1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 80vw;
+}
+
+.register-text-color{
+  color: pink !important;
 }
 
 
+.left-side {
+  background-image: url("/static/images/background2.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 100vw;
+}
+
+
+.btn{
+  margin-left: 56%;
+}
+
+/* login page */
+.login-background{
+  background: url('/static/images/darren-nunis-cxE7SXKnzv0-unsplash.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+.login-form{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-40% -40%);
+}
+
+.log {
+  opacity: .10;
+}
+
+.btn{
+  margin-left:35%;
+}
