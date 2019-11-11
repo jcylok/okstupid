@@ -9,6 +9,10 @@
   outline: none !important;
 }
 
+.form-group{
+  margin-right: 15px;
+}
+
 .form-control:focus {
   box-shadow: none !important;
 }
@@ -16,34 +20,25 @@
 .btn{
   background-color: pink !important;
   border:1px solid pink!important;
-  margin-left: 56%;
 }
 
-/*.form-group{
-  position: absolute;
-  top: 15%;
-  left: 65%;
-  width: 500px;
-  height: 200px;
-  margin-bottom: 10px;
-}
-*/
 input {
   border-top: none !important;
   border-width: 0 0 2px !important;
   background-color: rgba(0, 0, 0, 0) !important;
   outline: none !important;
 }
+
 /* register page */
 .resgiter-back{
   background: url('/static/images/flowers1.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
-  height: 50vw;
+  background-repeat: no-repeat;
+  height: 102vh; 
 }
 
-.register-text-color{
+.text-color{
   color: pink !important;
 }
 
@@ -53,12 +48,14 @@ input {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 103vh;
+  height: 102vh; 
 }
 
-
-.btn{
-  margin-left: 40%;
+/* profile-background */
+.profile-background{
+  background-image: url('/static/images/flowers2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 150vh; 
 }
-
-
