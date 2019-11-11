@@ -21,7 +21,7 @@
 
 
 .profile {
-  background: rgba(128, 128, 128, .55) ;
+  background: rgba(128, 128, 128, .55);
   z-index: 2;
   position: relative;
   text-align: center;
@@ -63,4 +63,6 @@
   font-family: Poppins;
   color: white;
 }
+
+
 
