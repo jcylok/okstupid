@@ -1,9 +1,16 @@
 /* overwrite bootstrap */
 .form-control {
-  border: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
   border-radius: 0 !important;
   border-bottom:2px solid black !important;
-  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+  outline: none !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
 }
 
 .btn{
@@ -11,26 +18,29 @@
   border:1px solid pink!important;
   margin-left: 56%;
 }
-.form-group{
+
+/*.form-group{
   position: absolute;
   top: 15%;
   left: 65%;
-  width: 30%;
+  width: 500px;
   height: 200px;
   margin-bottom: 10px;
 }
-
-.log {
-  opacity: .10;
+*/
+input {
+  border-top: none !important;
+  border-width: 0 0 2px !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  outline: none !important;
 }
-
 /* register page */
 .resgiter-back{
   background: url('/static/images/flowers1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
-  height: 80vw;
+  height: 50vw;
 }
 
 .register-text-color{
@@ -42,19 +52,13 @@
   background-image: url('/static/images/flowers2.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
-  height: 50vw;
-}
-
-
-.login-form{
-  position: absolute;
-  top: 40%;
-  left: 35%;
-  transform: translate(-50% -50%);
+  background-repeat: no-repeat;
+  height: 103vh;
 }
 
 
 .btn{
   margin-left: 40%;
 }
+
+

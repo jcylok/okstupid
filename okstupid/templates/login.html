@@ -1,25 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main class="login-background">
-  {% if error %}
-    <p style="background-color:firebrick;">{{error}}</p>
-  {% endif %}
-  <div class="test">
-  <section class="form-group login-form">
-    <form action="{% url 'login' %}" method="POST">
-      {% csrf_token %}
-      <p>
-        <label for="username">Username</label>
-        <input class="log form-control form-control-lg" type="text" name="username" maxlength="25" minlength="2" required>
-      </p>
-      <p>
-        <label for="password">Password</label>
-        <input class="log form-control form-control-lg" type="password" name="password" maxlength="25" minlength="4" required>
-      </p>
-      <button class="btn btn-danger" type="submit">Login</button>
-    </form>
-  </section>
-</div>
-</main>
+  <main class="login-background row justify-content-center align-items-center">
+    <div class="col col-md-4 col-lg-4">
+        {% if error %}
+          <p style="background-color:firebrick;">{{error}}</p>
+        {% endif %}
+        <div class="col">
+          <section class="form-group login-form">
+            <form action="{% url 'login' %}" method="POST">
+              {% csrf_token %}
+              <p>
+                <label for="username">Username</label>
+                <input class="log form-control form-control-lg" type="text" name="username" maxlength="25" minlength="2" required>
+              </p>
+              <p>
+                <label for="password">Password</label>
+                <input class="log form-control form-control-lg" type="password" name="password" maxlength="25" minlength="4" required>
+              </p>
+              <button class="btn btn-danger" type="submit">Login</button>
+            </form>
+          </section>
+        </div>
+      </div>
+  </main>
+
 {% endblock %}
