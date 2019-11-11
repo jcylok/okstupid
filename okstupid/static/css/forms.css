@@ -37,13 +37,13 @@
   color: pink !important;
 }
 
-
-
-
 /* login page */
 .login-background{
-  background: url('/static/images/darren-nunis-cxE7SXKnzv0-unsplash.jpg') no-repeat center center fixed;
+  background-image: url('/static/images/flowers2.jpg');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 50vw;
 }
 
 
