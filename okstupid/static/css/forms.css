@@ -6,6 +6,11 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
+.btn{
+  background-color: pink !important;
+  border:1px solid pink!important;
+  margin-left: 56%;
+}
 .form-group{
   position: absolute;
   top: 15%;
@@ -13,6 +18,10 @@
   width: 30%;
   height: 200px;
   margin-bottom: 10px;
+}
+
+.log {
+  opacity: .10;
 }
 
 /* register page */
@@ -29,18 +38,7 @@
 }
 
 
-.left-side {
-  background-image: url("/static/images/background2.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 50%;
-  height: 100vw;
-}
 
-
-.btn{
-  margin-left: 56%;
-}
 
 /* login page */
 .login-background{
@@ -52,14 +50,11 @@
 .login-form{
   position: absolute;
   top: 40%;
-  left: 40%;
-  transform: translate(-40% -40%);
+  left: 35%;
+  transform: translate(-50% -50%);
 }
 
-.log {
-  opacity: .10;
-}
 
 .btn{
-  margin-left:35%;
+  margin-left: 40%;
 }
