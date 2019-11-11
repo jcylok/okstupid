@@ -1,15 +1,33 @@
-.form-group{
-  margin: 0 auto;
-  border: 2px solid black;
-}
-
+/* overwrite bootstrap */
 .form-control {
-  /* background-color: none im; */
   border: none !important;
   border-radius: 0 !important;
   border-bottom:2px solid black !important;
   background: rgba(0, 0, 0, 0.5);
 }
+
+.form-group{
+  position: absolute;
+  top: 15%;
+  left: 65%;
+  width: 30%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+/* register page */
+.resgiter-back{
+  background: url('/static/images/flowers1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 80vw;
+}
+
+.register-text-color{
+  color: pink !important;
+}
+
 
 .left-side {
   background-image: url("/static/images/background2.jpg");
@@ -44,10 +62,4 @@
 
 .btn{
   margin-left:35%;
-}
-
-.test {
-  background: red;
-  width: 500px;
-  height: 200px;
 }
