@@ -19,7 +19,7 @@
 
 .profile {
   background: rgba(128, 128, 128, .55);
-  z-index: 2;
+  /* z-index: 2; */
   position: relative;
   text-align: center;
   color: white;
@@ -58,4 +58,6 @@
   font-family: Poppins;
   color: white;
 }
+
+
 
