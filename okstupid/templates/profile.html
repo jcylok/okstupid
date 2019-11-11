@@ -1,9 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div id="mobnav-btn-left">
+    <div class="mobnav-icon">
+      Like
+    </div>
+</div>
+<div id="mobnav-btn">
+    <div class="mobnav-icon">
+      Pass
+    </div>
+</div>
 <section class="background">
+  
 <main class="profile">
+
   <h2>{{ profile.nickname }} {{ profile.age }}</h2>
+
+
+
   <div class="photos">
       <img src="/media/{{profile.photo_one}}" width="450" height="420"/>
   </div>
