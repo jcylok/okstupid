@@ -23,6 +23,9 @@ def profile_edit(request):
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=profile)
         if form.is_valid():
+            profile.photo_one = request.FILES["photo_one"]
+            # profile.photo_two = request.FILES["photo_two"]
+            # profile.photo_three = request.FILES["photo_three"]
             profile = form.save()
             return redirect('profile')
     else:
@@ -38,6 +41,8 @@ def create_profile(request):
       profile = form.save(commit=False)
       profile.user_id = request.user
       profile.photo_one = request.FILES["photo_one"]
+      # profile.photo_two = request.FILES["photo_two"]
+      # profile.photo_three = request.FILES["photo_three"]
       profile.save()
       profile = Profile.objects.get(user_id=request.user.id)
       return redirect('singles_list')
