@@ -1,16 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id="mobnav-btn-left">
-    <div class="mobnav-icon">
-      Like
+
+{% if request.user != profile.user_id %}
+    {% if pair is None %}
+    <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">
+    <div id="mobnav-btn-left">
+        <div class="mobnav-icon">
+            ❤️️
+        </div>
     </div>
-</div>
-<div id="mobnav-btn">
-    <div class="mobnav-icon">
-      Pass
+    </a>
+    <div id="mobnav-btn">
+        <div class="mobnav-icon">
+            No
+        </div>
     </div>
-</div>
+    {% elif pair.confirmed == False and pair.profile_id_connect == request.user %}
+    <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">
+        <div id="mobnav-btn-left">
+            <div class="mobnav-icon">
+                ❤️️
+            </div>
+        </div>
+    </a>
+    <div id="mobnav-btn">
+        <div class="mobnav-icon">
+            No
+        </div>
+    </div>
+    {% elif pair.confirmed == False and pair.profile_id_init == request.user %}
+    <p>you've likeed this person.</p>
+    {% else %}
+    <p>your've liked this person.</p>
+    {% endif %}
+{% endif %}
+
 <section class="background">
   
 <main class="profile">
@@ -64,13 +89,8 @@
 <br>
   <div class="action">
 {% if request.user != profile.user_id %}
-    {% if pair is None %}
-    <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">LIKE</a>
-    {% elif pair.confirmed == False and pair.profile_id_connect == request.user %}
-    <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">LIKE2</a>
-    {% elif pair.confirmed == False and pair.profile_id_init == request.user %}
-    <p>you've likeed this person.</p>
-    {% else %}
+
+    {% if pair.profile_id_init == request.user or pair.profile_id_connect == request.user %}
     <p>your've liked this person.</p>
     {% endif %}
 {% endif %}

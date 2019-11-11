@@ -1,44 +1,119 @@
-{% extends 'base.html' %}
-{% block content %}
+{% load staticfiles %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'css/allpages.css' %}">
+  <link rel="stylesheet" href="{% static 'css/findsingles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+ 
+  <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Poppins:400,800&display=swap" rel="stylesheet">
 
-
-<main>
-
-  <!-- <div class="header">
-    <h2 class="findsingles-title">Check out these Stupids in your Area</h2>
-    <p class= "description"> Practice makes perfect.</p>
-  </div> -->
-
-      
-
-
-
-
-
-
-  <section class="profile-list"> 
-    
-  {% for profile in profiles %}
-  
-    <div class="image-area">
-      <div class="img-wrapper">
-          <img src="/media/{{profile.photo_one}}"/>
-        <h2>
-          <a href="{% url 'profile_show' pk=profile.pk %}" class="card-content"><p>{{profile.nickname}}</p></a>
-          <p class="card-content">{{profile.location}}</p>
-          <p class="card-content">{{profile.age}}</p> 
-        </h2>   
-      </div>
-    </div>
-  </section>  
-  {% endfor %}
-
-
-
-
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
  
 
 
-</main>  
-{% endblock %}
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  
+  <script src="{% static 'js/navbar.js' %}"></script> 
+  <script src="{% static 'js/main.js' %}"></script>  
+  <title>Okstupid</title>
+</head>
+<body>
+  
+    <!-- <header> -->
+
+  
+
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="banner">
+          <div class="container">
+          <!-- Brand -->
+          {% if user.is_authenticated %}
+          <a class="navbar-brand" href="/"><span>OkStupid</span> &nbsp; &nbsp; {{ user.first_name }}, welcome back!</a>
+          {% else %}
+          <a class="navbar-brand" href="/"><span>OkStupid</span> &nbsp; &nbsp; Hi, guest!</a>
+          {% endif %}
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+              {% endif %}
+             <!-- Dropdown -->
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Menu
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'matches_list' %}">My Matches ❤</a>
+                <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
+                <a class="dropdown-item" href="{% url 'singles_list' %}">Find Singles</a>
+                <a class="dropdown-item" href="{% url 'profile_delete' %}">Okstupid's Motto</a>
+              </div>
+            </li>
+            {% endif %}
+            </ul>
+          </div>
+          </div>
+        </nav>
+        
+      
+      	<div class="image-area">
+          <div class="interest">
+            {% if profile.gender == 'F' %}
+            Ready for her?
+            {% else %}
+            Ready for him?
+            {% endif %}
+          </div>
+            
+            <div class="img-wrapper">
+              <img src="/media/{{profile.photo_one}}" alt="Atul Prajapati">
+              <a href="{% url 'profile_show' pk=profile.id %}"><h2>{{profile.nickname}}</h2></a>
+            </div>
+
+            <div class="button-pair">
+              dqw
+            </div>
+          </div>
+
+
+         
+
+          
+          
+
+
+    
+
+
+    
+
+
+
+</body>
+
+</html>

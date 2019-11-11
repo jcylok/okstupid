@@ -27,7 +27,8 @@
     font-weight: 500;
     letter-spacing: 1px;
     color: pink !important;
-   font-family: 'Gothic A1', sans-serif;
+    font-family: 'Tajawal', sans-serif;
+
 }
 .navbar-nav .nav-item .nav-link:hover{color:#fed136;}
 .navbar-expand-md .navbar-nav .dropdown-menu{
@@ -39,7 +40,7 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     -moz-transition: padding-top .3s,padding-bottom .3s;
     transition: padding-top .3s,padding-bottom .3s;
     border: none;
-    background-color: rgba(33,37,60)
+    background-color: rgba(33,37,41, 0.6)
 	}
 	
  .shrink {

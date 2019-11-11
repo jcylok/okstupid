@@ -53,12 +53,12 @@ def create_profile(request):
 
 def singles_list(request):
   myprofile = Profile.objects.get(user_id=request.user)
-  profiles = Profile.objects.filter(
+  profile = Profile.objects.filter(
     age__lte=myprofile.age_preference_max,
     age__gte=myprofile.age_preference_min,
     gender=myprofile.gender_preference
-    ).exclude(user_id=request.user)
-  context = {'profiles': profiles}
+    ).exclude(user_id=request.user).first()
+  context = {'profile': profile}
   return render(request, 'find_singles.html', context)
 
 def profile_show(request, pk):
