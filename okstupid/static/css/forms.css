@@ -1,7 +1,60 @@
+/* overwrite bootstrap */
+.form-control {
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom:2px solid black !important;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.btn{
+  background-color: pink !important;
+  border:1px solid pink!important;
+  margin-left: 56%;
+}
 .form-group{
   position: absolute;
-  top: 30%;
-  left: 60%;
+  top: 15%;
+  left: 65%;
+  width: 30%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.log {
+  opacity: .10;
+}
+
+/* register page */
+.resgiter-back{
+  background: url('/static/images/flowers1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 80vw;
+}
+
+.register-text-color{
+  color: pink !important;
+}
+
+/* login page */
+.login-background{
+  background-image: url('/static/images/flowers2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  height: 50vw;
 }
 
 
+.login-form{
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  transform: translate(-50% -50%);
+}
+
+
+.btn{
+  margin-left: 40%;
+}
