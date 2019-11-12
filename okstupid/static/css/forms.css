@@ -53,7 +53,7 @@ input {
 
 /* profile-background */
 .profile-background{
-  background-image: url('/static/images/flowers2.jpg');
+  /* background-image: url('/static/images/flowers2.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
