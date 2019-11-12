@@ -105,12 +105,4 @@ main {
 }
 
 
-footer{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #403565;
-  color: white;
-  text-align: center;
-}
+
