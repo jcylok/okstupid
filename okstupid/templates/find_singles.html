@@ -83,21 +83,33 @@
       
       	<div class="image-area">
           <div class="interest">
-            {% if profile.gender == 'F' %}
+            {% if profile.gender == 'F' and profile %}
             Ready for her?
-            {% else %}
+            {% elif profile.gender == 'M' and profile%}
             Ready for him?
             {% endif %}
           </div>
             
+            {% if profile %}
             <div class="img-wrapper">
               <img src="/media/{{profile.photo_one}}" alt="Atul Prajapati">
-              <a href="{% url 'profile_show' pk=profile.id %}"><h2>{{profile.nickname}}</h2></a>
+              
+              <a href="{% url 'profile_show' profile_slug=profile.slug %}"><h2>{{profile.nickname}}</h2></a>
+            
             </div>
-
+            {% else %}
+            <div class="img-wrapper">
+                <div class="interest">
+                  Sorry, no one match your search now.
+                </div>
+            </div>
+            {% endif %}
+            
+            {% if profile %}
             <div class="button-pair">
               dqw
             </div>
+            {% endif %}
           </div>
 
 

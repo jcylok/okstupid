@@ -24,11 +24,13 @@
             </div>
         </div>
     </a>
-    <div id="mobnav-btn">
-        <div class="mobnav-icon">
-            No
-        </div>
-    </div>
+    <a id="passbutton" href="{% url 'pass_handle' pk=profile.id %}">
+      <div id="mobnav-btn">
+          <div class="mobnav-icon">
+              No
+          </div>
+      </div>
+    </a>
     {% elif pair.confirmed == False and pair.profile_id_init == request.user %}
     <p>you've likeed this person.</p>
     {% else %}

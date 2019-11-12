@@ -15,7 +15,7 @@ urlpatterns = [
   path('profile/delete', views.profile_delete, name='profile_delete'),
   path('profile/matches', views.matches_list, name='matches_list'),
   path('profile/<int:pk>/delete', views.profile_delete, name='profile_delete'),
-  path('profile/<int:pk>/', views.profile_show, name='profile_show'),
+  path('profile/<slug:profile_slug>/', views.profile_show, name='profile_show'),
   path('profile/<int:pk>/match/handle', views.match_handle, name='match_handle'),
 
   
