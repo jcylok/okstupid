@@ -68,10 +68,11 @@
                 Menu
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'matches_list' %}">My Matches ❤</a>
-                <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
-                <a class="dropdown-item" href="{% url 'singles_list' %}">Find Singles</a>
-                <a class="dropdown-item" href="{% url 'profile_delete' %}">Okstupid's Motto</a>
+                  <a class="dropdown-item" href="{% url 'matches_list' %}">MY MATCHES ❤</a>
+                  <a class="dropdown-item" href="{% url 'profile' %}">MY PROFILE</a>
+                  <a class="dropdown-item" href="{% url 'profile_edit' %}">EDIT PROFILE</a>
+                  <a class="dropdown-item" href="{% url 'singles_list' %}">FIND SINGLES</a>
+                  <a class="dropdown-item" href="{% url 'profile_delete' %}">OKSTUPID's MOTTO</a>
               </div>
             </li>
             {% endif %}
@@ -92,7 +93,7 @@
             
             {% if profile %}
             <div class="img-wrapper">
-              <img src="/media/{{profile.photo_one}}" alt="Atul Prajapati">
+              <img src="/media/{{profile.photo_one}}" alt="img">
               
               <a href="{% url 'profile_show' profile_slug=profile.slug %}"><h2>{{profile.nickname}}</h2></a>
             

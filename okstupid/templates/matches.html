@@ -70,10 +70,11 @@
                 Menu
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'matches_list' %}">My Matches ❤</a>
-                <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
-                <a class="dropdown-item" href="{% url 'singles_list' %}">Find Singles</a>
-                <a class="dropdown-item" href="{% url 'profile_delete' %}">Okstupid's Motto</a>
+                <a class="dropdown-item" href="{% url 'matches_list' %}">MY MATCHES ❤</a>
+                <a class="dropdown-item" href="{% url 'profile' %}">MY PROFILE</a>
+                <a class="dropdown-item" href="{% url 'profile_edit' %}">EDIT PROFILE</a>
+                <a class="dropdown-item" href="{% url 'singles_list' %}">FIND SINGLES</a>
+                <a class="dropdown-item" href="{% url 'profile_delete' %}">OKSTUPID's MOTTO</a>
               </div>
             </li>
             {% endif %}
@@ -131,7 +132,7 @@
                   </div>
                   {% for myloves_profile in myloves_profiles %}
                   <div class="carousel-item">
-                    <a href=""><img class="d-block w-100" src="/media/{{myloves_profile.photo_one}}" alt="Second slide"></a>
+                    <a href="{% url 'profile_show' profile_slug=myloves_profile.slug %}"><img class="d-block w-100" src="/media/{{myloves_profile.photo_one}}" alt="Second slide"></a>
                   </div>
                   {% endfor %}
            

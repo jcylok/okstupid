@@ -17,6 +17,7 @@ urlpatterns = [
   path('profile/<int:pk>/delete', views.profile_delete, name='profile_delete'),
   path('profile/<slug:profile_slug>/', views.profile_show, name='profile_show'),
   path('profile/<int:pk>/match/handle', views.match_handle, name='match_handle'),
+  path('profile/<int:pk>/pass/handle', views.pass_handle, name='pass_handle'),
 
   
 

@@ -123,7 +123,7 @@ def matches_list(request):
   context = {'myprofile': myprofile, 'myloves_profiles': myloves_profiles }
   return render(request, 'matches.html', context)
 
-def pass_handle(request):
+def pass_handle(request, pk):
   my_id = request.user
   target_id = Profile.objects.get(id=pk).user_id
 
