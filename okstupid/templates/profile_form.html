@@ -2,149 +2,120 @@
 
 {% block content %}
 <main class="profile-background row justify-content-center align-items-center">
-  <div  class="profile-form col col-md-4 col-lg-4">
+  <div  class="profile-form col col-md-6 col-lg-6">
     <div class="col">
       <section >
       <h1>{{ header }}</h1>
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="col">
             <label class="text-color" for="nickname">Nickname</label>
-            <input class="form-control form-control-sm" type="text" name="nickname" required maxlength="25" minlength="2" value="{{ profile.nickname }}">
+            <input class="form-control" type="text" name="nickname" required maxlength="25" minlength="2" value="{{ profile.nickname }}">
           </div>
-          <div class="form-group col-md-6"> 
+          <div class="col"> 
             <label class="text-color" for="gender">Gender (M/F)</label>
-            <input class="form-control form-control-sm" type="text" name="gender" required maxlength="1" minlength="1" value="{{ profile.gender }}">
+            <input class="form-control" type="text" name="gender" required maxlength="1" minlength="1" value="{{ profile.gender }}">
+          </div> 
+        <div class="col">
+            <label class="text-color" for="age">Age</label>
+            <input class="form-control" type="number" name="age" required min="18" max="80" maxlength="2" minlength="2" value="{{ profile.age }}">
+          </div> 
+        </div>  
+      <!-- 1 row ends -->
+      <!-- 2nd row start -->
+        <div class="form-row">
+          <div class="col">   
+            <label class="text-color" for="height">Height (e.g. 5'11")</label>
+            <input class="form-control" type="text" name=" height" required maxlength="25" minlength="2" value="{{ profile.height }}">
+          </div>
+
+        <div class="col">  
+              <label class="text-color" for="location">Location</label>
+              <input class="form-control" type="text" name="location" required maxlength="25" minlength="2" value="{{ profile.location }}" >
+          </div>
+
+          <div class="col">    
+              <label class="text-color" for="job_title">Job title</label>
+              <input class="form-control" type="text" name="job_title" required maxlength="25" minlength="4" value="{{ profile.job_title }}">
           </div> 
         </div>
-        <div class="form-group">
-          <div class="form-group col-md-6">
-            <label class="text-color" for="age">Age</label>
-            <input class="form-control form-control-sm" type="number" name="age" required min="18" max="80" maxlength="2" minlength="2" value="{{ profile.age }}">
-          </div>  
-        </div> 
-        <div class="form-group">   
-            <label class="text-color" for="height">Height (e.g. 5'11")</label>
-            <input class="form-control form-control-sm" type="text" name=" height" required maxlength="25" minlength="2" value="{{ profile.height }}">
-          </div> 
-        </div> 
-        <div class="row">  
-        <div class="col-sm-6">  
-            <p>
-              <label class="text-color" for="location">Location</label>
-              <input class="form-control form-control-sm" type="text" name="location" required maxlength="25" minlength="2" value="{{ profile.location }}" >
-            </p>
-          </div>
-          <div class="col">    
-            <p>
-              <label class="text-color" for="job_title">Job title</label>
-              <input class="form-control form-control-sm" type="text" name="job_title" required maxlength="25" minlength="4" value="{{ profile.job_title }}">
-            </p>
-          </div> 
+        <!-- 2nd row ends -->  
+        <!-- 3th row starts -->  
+        <div class="form-row">
           <div class="col"> 
-            <p>
               <label class="text-color" for="education">Education</label>
-              <input class="form-control form-control-sm" type="text" name="education" required maxlength="25" minlength="4" value="{{ profile.education }}">
-            </p>
+              <input class="form-control" type="text" name="education" required maxlength="25" minlength="4" value="{{ profile.education }}">
           </div>
-        </div> 
-          <div class="col-sm-6">
-            <p>
+          <div class="col">
               <label class="text-color" for="hometown">Hometown</label>
-              <input  class="form-control form-control-sm" type="text" name="hometown" required maxlength="25" minlength="4" value="{{ profile.hometown }}">
-            </p>
+              <input  class="form-control" type="text" name="hometown" required maxlength="25" minlength="4" value="{{ profile.hometown }}">
           </div>  
-            <div class="form-check form-check-inline">
-                <div class="col">
-              <p>
+          <div class="form-check form-check-inline">
+              <div class="col">
                 <label class="text-color" for="drinker">Drinker</label>
-                <input  class="form-control form-control-sm" type="checkbox" name="drinker" value="{{ profile.drinker }}">
-              </p>
+                <input  class="form-control" type="checkbox" name="drinker" value="{{ profile.drinker }}">
             </div>
             <div class="col">
-              <p>
                 <label class="text-color" for="smoker">Smoker</label>
-                <input class="form-control form-control-sm" type="checkbox" name="smoker" value="{{ profile.smoker }}">
-              </p>
+                <input class="form-control" type="checkbox" name="smoker" value="{{ profile.smoker }}">
             </div>  
-            </div>
-          <div class="row"> 
-          <div class="col-sm-6"> 
-            <p>
+          </div>
+        </div> 
+        <!-- 3th row end -->  
+        <!-- 4th row starts -->  
+        <div class="form-row"> 
+          <div class="col-sm-4"> 
               <label class="text-color" for="photo_one">Profile Picture</label>
-              <input  class="form-control form-control-sm" type="file" name="photo_one">
-            </p>
+              <input  class="form-control" type="file" name="photo_one">
           </div>
-          <div class="col-sm-6">
-            <p>
+          <div class="col-sm-4">
               <label class="text-color" for="photo_two">Photo Two</label>
-              <input  class="form-control form-control-sm" type="file" name="photo_two">
-            </p>
+              <input  class="form-control" type="file" name="photo_two">
           </div>
-          <div class="col-sm-6">
-            <p>
+          <div class="col-sm-4">
               <label class="text-color" for="photo_three">Photo Three</label>
-              <input class="form-control form-control-sm" type="file" name="photo_three">
-            </p>
+              <input class="form-control" type="file" name="photo_three">
           </div>
+        </div> 
+        <!-- 4th row ends --> 
+        <!-- 5 row starts --> 
+        <div class="form-row"> 
             <div class="form-group col-md-6">
-                <p>
-                  <label class="text-color" for="prompt_one">Where is your ideal first date?</label>
-                  <input class="form-control form-control-sm" type="text" name="prompt_one" required maxlength="255" minlength="4" value="{{ profile.prompt_one }}">
-                </p>
-              </div> 
-          </div>
-              <div class="row"> 
-              <div class="form-group col-md-6">
-                <p>
-                  <label class="text-color" for="prompt_two">My friends would say I’m…</label>
-                  <input class="form-control form-control-sm" type="text" name="prompt_two" required maxlength="255" minlength="4" value="{{ profile.prompt_two }}">
-                </p>
-              </div>   
-          <div class="form-group col-md-6">
-            <p>
+              <label class="text-color" for="prompt_one">Where is your ideal first date?</label>
+              <input class="form-control" type="text" name="prompt_one" required maxlength="255" minlength="4" value="{{ profile.prompt_one }}">
+            </div> 
+            <div class="form-group col-md-4">
+              <label class="text-color" for="prompt_two">My friends would say I’m…</label>
+              <input class="form-control" type="text" name="prompt_two" required maxlength="255" minlength="4" value="{{ profile.prompt_two }}">
+            </div>   
+            <div class="form-group col-md-6">
               <label class="text-color" for="prompt_three">If money didn’t matter, my dream job would be….</label>
-              <input class="form-control form-control-sm" type="text" name="prompt_three" required maxlength="255" minlength="4" value="{{ profile.prompt_three }}">
-            </p>
-          </div>
-        </div> 
-        <div class="row">
-            <div class="col-md-6">  
-            <p>
-              <label class="text-color" for="age_preference_max">Age Preference Max</label>
-              <input class="form-control form-control-sm" type="number" name="age_preference_max" required required min="18" max="80" maxlength="2" minlength="2" value="{{ profile.age_preference_max }}">
-            </p>
+              <input class="form-control" type="text" name="prompt_three" required maxlength="255" minlength="4" value="{{ profile.prompt_three }}">
             </div>
-            <div class="col-sm-6">
-            <p>
+            <div class="col">  
+              <label class="text-color" for="age_preference_max">Age Preference Max</label>
+              <input class="form-control" type="number" name="age_preference_max" required required min="18" max="80" maxlength="2" minlength="2" value="{{ profile.age_preference_max }}">
+            </div>
+            <div class="col">
               <label class="text-color" for="age_preference_min">Age Preference Min</label>
-              <input class="form-control form-control-sm" type="number" name="age_preference_min" required required min="18" max="80" maxlength="2" minlength="2" value="{{ profile.age_preference_min }}">
-            </p>
-          </div>
-        </div> 
-          <div class="row">
-          <div class="col-sm-6">  
-            <p>
+              <input class="form-control" type="number" name="age_preference_min" required required min="18" max="80" maxlength="2" minlength="2" value="{{ profile.age_preference_min }}">
+            </div>
+        </div>  
+        <div class="col-md-2">  
               <label class="text-color" for="gender_preference">Gender Preference (M/F)</label>
-              <input class="form-control form-control-sm" type="text" name="gender_preference" required maxlength="1" minlength="1" value="{{ profile.gender_preference }}">
-            </p>
-          </div>
+              <input class="form-control" type="text" name="gender_preference" required maxlength="1" minlength="1" value="{{ profile.gender_preference }}">
         </div>
-          <div class="row">
-          <div class="col-sm-6">  
-            <p>
-              <label class="text-color" for="slug">Are you excited about Okstupid?</label>
-              <input class="form-control form-control-sm" type="text" name="slug" required maxlength="255" minlength="4" value="{{ profile.slug }}">
-            </p>
+        <!-- 5 row ends -->
+        <div class="form-row"> 
+          <div class="col">
+              <button class="btn btn-danger mb-2" type="submit">Save</button>
           </div>
+        </div>   
         </div>
-      </div>  
-      <div class="form-group col-sm-7">
-        <button class="btn btn-danger mb-2" type="submit">Save</button>
-      </div>
-    </div> 
-      </form>
+        </div> 
+      </div> 
+    </form>
       {% if user.is_authenticated %}
       <button class="btn btn-danger">
         <a href="{% url 'profile_delete' pk=user.pk %}">Delete My Account</a>
