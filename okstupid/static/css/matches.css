@@ -23,14 +23,16 @@ html {
       margin-top: 200px;
   }
 
-  h2 {
+  #meetmatches {
       text-align: center;
       padding-bottom: 20px;
+      color: brown;
+      font-family: cursive;
   }
 
 
 
-  img {
+  /* img {
     border-radius: 70%;
 
-  }
+  } */

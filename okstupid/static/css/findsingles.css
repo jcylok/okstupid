@@ -13,6 +13,7 @@ html {
 	left: 50%;
 	transform: translate(-50%, 33%);
 	position: absolute;
+
 	
 }
 
@@ -36,6 +37,7 @@ html {
 	position: relative;
 	overflow: hidden;
 	border-radius: 3%;
+	margin-top: 100px;
 }
 
 .img-wrapper:before
