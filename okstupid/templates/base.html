@@ -1,5 +1,5 @@
 {% load staticfiles %}
-
+​
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +8,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" href="{% static 'css/allpages.css' %}">
-  <link rel="stylesheet" href="{% static 'css/findsingles.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'css/findsingles.css' %}"> -->
   <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
   <!-- <link rel="stylesheet" href="{% static 'css/main.css' %}"> -->
   <link rel="stylesheet" href="{% static 'css/alldevices.css' %}">
   <link rel="stylesheet" href="{% static 'css/profile.css' %}">
   <link rel="stylesheet" href="{% static 'css/forms.css' %}">
   <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Poppins:400,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Tajawal&display=swap" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
- 
-
-
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -36,11 +35,13 @@
          
           <a href="/"><img class="nav-logo" src="/static/images/newlogo.png" alt="home" width="125" height="125"><span></span></a>
           <div class="container">
+              <a href="/"><img class="nav-logo" src="/static/images/newlogo.png" alt="home" width="125" height="125"><span></span></a>
+​
           <!-- Brand -->
           {% if user.is_authenticated %}
-          <a class="navbar-brand" href="/"><span>OkStupid</span> &nbsp; &nbsp; {{ user.first_name }}, welcome back!</a>
+          <a class="navbar-brand" href="/"><span></span> &nbsp; &nbsp; {{ user.first_name }}, welcome back!</a>
           {% else %}
-          <a class="navbar-brand" href="/"><span>OkStupid</span> &nbsp; &nbsp; Hi, guest!</a>
+          <a class="navbar-brand" href="/"><span></span> &nbsp; &nbsp; Hi, guest!</a>
           {% endif %}
           <!-- Toggler/collapsibe Button -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -52,27 +53,28 @@
             <ul class="navbar-nav ml-auto">
               {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                <a class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
               </li>
               {% else %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'register' %}">Sign up</a>
+                <a class="nav-link" href="{% url 'register' %}">SIGN UP</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
               </li>
               {% endif %}
             <!-- Dropdown -->
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                Menu
+                MENU
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'matches_list' %}">My Matches ❤</a>
-                <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
-                <a class="dropdown-item" href="{% url 'singles_list' %}">Find Singles</a>
-                <a class="dropdown-item" href="{% url 'profile_delete' %}">Okstupid's Motto</a>
+                <a class="dropdown-item" href="{% url 'matches_list' %}">MY MATCHES ❤</a>
+                <a class="dropdown-item" href="{% url 'profile' %}">MY PROFILE</a>
+                <a class="dropdown-item" href="{% url 'profile_edit' %}">EDIT PROFILE</a>
+                <a class="dropdown-item" href="{% url 'singles_list' %}">FIND SINGLES</a>
+                <a class="dropdown-item" href="{% url 'profile_delete' %}">OKSTUPID's MOTTO</a>
               </div>
             </li>
             {% endif %}
@@ -84,19 +86,7 @@
     <div class="col p-0">
         {% block content %}
           {% endblock %}
-    <footer class="footer">
-        <div>
-          <span>&copy; 2019 OkStupid</span>
-            <ul class="social-icons">
-              <li><a href="https://www.instagram.com/livingindiatv/"><img src="/static/images/instagram.png" alt="instagram" width="30" height="30"><span></span></a></li>
-              <li><a href="https://in.pinterest.com/livingindiatv/"><img src="/static/images/pintrest.png" alt="pinterest" width="30" height="30"><span></span></a></li>
-              <li><a href="https://youtube.com"><img src="/static/images/youtube.png" alt="youtube" width="30" height="30"><span></span></a></li>
-              <li><a href="https://twitter.com/livingindiatv"><img src="/static/images/twitter.png" alt="twitter" width="30" height="30"><span></span></a></li>
-              <li><a href="https://www.facebook.com/livingindiatv/"><img src="/static/images/facebook.png" alt="facebook" width="30" height="30"><span></span></a></li>
-             </ul>
-        </div>
-    </footer>
-    </div>  
+    </div>          
   </div>    
 </body>
 </html>

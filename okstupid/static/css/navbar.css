@@ -8,18 +8,16 @@
 	font-size:1em;
 	}
 
-
-
-	h1,h2,h3,h4,h5,h6{color:#323233;text-transform:uppercase;}
-.navbar-brand span{
+h1,h2,h3,h4,h5,h6{color:#323233;text-transform:uppercase;}
+.navbar-brand  span{
 	color: pink;
 	font-size:25px;font-weight:700;letter-spacing:0.1em;
-    font-family: 'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive;
+  font-family: 'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive;
 }
 .navbar-brand {
 	color: #fff;
 	font-size:25px;
-    font-family: 'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive;
+  font-family: 'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive;
 	font-weight:700;
 	letter-spacing:0.1em;
 }
@@ -27,41 +25,42 @@
 .navbar-nav .nav-item .nav-link{
 	padding: 1.1em 1em!important;
 	font-size: 120%;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: pink !important;
-   font-family: 'Gothic A1', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: pink !important;
+  font-family: 'Gothic A1', sans-serif;
 }
-.navbar-nav .nav-item .nav-link:hover{color:#fed136;}
+.navbar-nav .nav-item .nav-link:hover{
+	color:#fed136;
+}
 .navbar-expand-md .navbar-nav .dropdown-menu{
-    border-top:0px solid red;
-    background: rgba(255,182,193,0.5);
+  border-top:0px solid red;
+  background: rgba(255,182,193,0.5);
 }
 .dropdown-item:hover{background-color:#fed136;color:#fff;}
-nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
-    -moz-transition: padding-top .3s,padding-bottom .3s;
-    transition: padding-top .3s,padding-bottom .3s;
-    border: none;
-    background-color: rgba(33,37,60)
-	}
-	
- .shrink {
-    padding-top: 0;
-    padding-bottom: 0;
-    background-color: rgba(33,37,41)
+nav{
+	-webkit-transition: padding-top .3s,padding-bottom .3s;
+  -moz-transition: padding-top .3s,padding-bottom .3s;
+  transition: padding-top .3s,padding-bottom .3s;
+  border: none;
+  background-color: rgba(33,37,60)
+}
+.shrink {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(33,37,41)
 }
 .banner{
 	background-image:url('http://www.hd-freewallpapers.com/latest-wallpapers/abstract-website-backgrounds.jpg');
 	text-align: center;
-    color: #fff;
-   
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+	color: #fff;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 .banner-text{
 	padding:200px 0 150px 0;
@@ -69,17 +68,17 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
 .banner-heading{
 	font-family: 'Lobster', cursive;
 	font-size: 75px;
-    font-weight: 700;
-    line-height: 100px;
-    margin-bottom: 30px;
+  font-weight: 700;
+  line-height: 100px;
+  margin-bottom: 30px;
 	color:#fff;
 }
 .banner-sub-heading{
 	font-family: 'Libre Baskerville', serif;
 	font-size: 30px;
-    font-weight: 300;
-    line-height: 30px;
-    margin-bottom: 50px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-bottom: 50px;
 	color:#fff;
 }
 
@@ -144,4 +143,3 @@ nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
     margin-bottom: 40px;
 }
 }
- 
