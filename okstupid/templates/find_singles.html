@@ -72,7 +72,7 @@
                   <a class="dropdown-item" href="{% url 'profile' %}">MY PROFILE</a>
                   <a class="dropdown-item" href="{% url 'profile_edit' %}">EDIT PROFILE</a>
                   <a class="dropdown-item" href="{% url 'singles_list' %}">FIND SINGLES</a>
-                  <a class="dropdown-item" href="{% url 'profile_delete' %}">OKSTUPID's MOTTO</a>
+                  <a class="dropdown-item" href="{% url 'profile_delete' pk=user.pk %}">DELETE ACCOUNT</a>
               </div>
             </li>
             {% endif %}

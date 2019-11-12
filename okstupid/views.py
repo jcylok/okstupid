@@ -30,7 +30,7 @@ def profile_edit(request):
             return redirect('profile')
     else:
         form = ProfileForm(instance=profile)
-    context = {'profile': profile, 'form': form, 'header': f"{profile.user_id.first_name}, make sure to save the changes!"}
+    context = {'profile': profile, 'form': form, 'header': f"{profile.user_id.first_name}, make sure to save changes!"}
     return render(request, 'profile_form.html', context)
 
 
