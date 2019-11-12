@@ -182,3 +182,19 @@ footer{
   height: 48px;
 }
 
+
+#mobnav-btn-left, #mobnav-btn {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+#mobnav-btn-left:hover, #mobnav-btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#findme {
+  color: orange;
+}
+
+

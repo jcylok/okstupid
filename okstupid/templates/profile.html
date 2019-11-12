@@ -11,11 +11,13 @@
         </div>
     </div>
     </a>
+    <a id="passbutton" href="{% url 'pass_handle' pk=profile.id %}">
     <div id="mobnav-btn">
         <div class="mobnav-icon">
             No
         </div>
     </div>
+    </a>
     {% elif pair.confirmed == False and pair.profile_id_connect == request.user %}
     <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">
         <div id="mobnav-btn-left">
@@ -93,8 +95,11 @@
   <div class="action">
 {% if request.user != profile.user_id %}
 
-    {% if pair.profile_id_init == request.user or pair.profile_id_connect == request.user %}
-    <p>Your've liked this person.</p>
+    <!-- {% if pair.profile_id_init == request.user or pair.profile_id_connect == request.user %}
+    <p>Your've liked me.</p>
+    {% endif %} -->
+    {% if pair.confirmed %}
+    <p id="findme">Pleae find me  : {{profile.user_id.email}} </p>
     {% endif %}
 {% endif %}
 </div>
