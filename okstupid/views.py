@@ -57,6 +57,8 @@ def singles_list(request):
   b = Matched.objects.filter(profile_id_init=request.user, passed=False, confirmed=True).values_list('profile_id_connect', flat=True)
   c = Matched.objects.filter(profile_id_connect=request.user, passed=True, confirmed=False).values_list('profile_id_init', flat=True)
   d = Matched.objects.filter(profile_id_init=request.user, passed=True, confirmed=False).values_list('profile_id_connect', flat=True)
+  d = Matched.objects.filter(profile_id_init=request.user, passed=False, confirmed=False).values_list('profile_id_connect', flat=True)
+
   print(a)
   print(b)
   bye = list(a) + list(b) + list(c) + list(d)

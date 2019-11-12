@@ -38,6 +38,7 @@ html {
 	overflow: hidden;
 	border-radius: 3%;
 	margin-top: 100px;
+	margin-bottom: 100px;
 }
 
 .img-wrapper:before
@@ -169,4 +170,9 @@ html {
 	border-radius: 3%;
 	/* position: relative;
 	overflow: hidden; */
+}
+
+#ready {
+	margin-top: 30px;
+	transform: translate(0px, 60px);
 }

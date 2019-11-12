@@ -1,27 +1,32 @@
 /* overwrite bootstrap */
 .form-control {
-  border: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
   border-radius: 0 !important;
   border-bottom:2px solid black !important;
-  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+  outline: none !important;
+}
+
+.form-group{
+  margin-right: 15px;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
 }
 
 .btn{
   background-color: pink !important;
   border:1px solid pink!important;
-  margin-left: 56%;
-}
-.form-group{
-  position: absolute;
-  top: 15%;
-  left: 65%;
-  width: 30%;
-  height: 200px;
-  margin-bottom: 10px;
 }
 
-.log {
-  opacity: .10;
+input {
+  border-top: none !important;
+  border-width: 0 0 2px !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  outline: none !important;
 }
 
 /* register page */
@@ -29,11 +34,11 @@
   background: url('/static/images/flowers1.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
-  height: 80vw;
+  background-repeat: no-repeat;
+  height: 102vh; 
 }
 
-.register-text-color{
+.text-color{
   color: pink !important;
 }
 
@@ -42,19 +47,19 @@
   background-image: url('/static/images/flowers2.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
-  height: 50vw;
+  background-repeat: no-repeat;
+  height: 102vh; 
 }
 
-
-.login-form{
-  position: absolute;
-  top: 40%;
-  left: 35%;
-  transform: translate(-50% -50%);
+/* profile-background */
+.profile-background{
+  background-image: url('/static/images/flowers2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 150vh; 
 }
 
-
-.btn{
-  margin-left: 40%;
+.form-check{
+  margin-right: 3px !important;
 }
