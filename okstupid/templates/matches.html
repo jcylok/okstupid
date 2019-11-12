@@ -83,69 +83,31 @@
           </div>
         </nav>
         
-      
-      	<div class="image-area">
-          <div class="interest">
-            {% if profile.gender == 'F' and profile %}
-            Ready for her?
-            {% elif profile.gender == 'M' and profile%}
-            Ready for him?
-            {% endif %}
-          </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <h2 id="meetmatches">🔥 Meet your matches!</h2>
+  
             
-    
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2018/01/04/19/43/love-3061483__480.jpg" alt="First slide">
 
-
-         
-
-          <!-- <div class="matchtitle">
-              <h2>See your matches!</h2>
-              {% for myloves_profile in myloves_profiles %}
-              <section>
-                <ul>
-                  <li>
-                    {{ myloves_profile.nickname }}
-                    <div>
-                      <a href="{% url 'profile_show' profile_slug=myloves_profile.slug %}">
-                        <img src="/media/{{myloves_profile.photo_one}}" width="120" height="120"/>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </section>  
-              {% endfor %}
-            </div> -->
-           
-
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <h2 id="meetmatches">🔥 Meet your matches!</h2>
-                <ol class="carousel-indicators">
-                  <!-- <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
-                </ol>
-                
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2018/01/04/19/43/love-3061483__480.jpg" alt="First slide">
-
-                  </div>
-                  {% for myloves_profile in myloves_profiles %}
-                  <div class="carousel-item">
-                    <a href="{% url 'profile_show' profile_slug=myloves_profile.slug %}"><img class="d-block w-100" src="/media/{{myloves_profile.photo_one}}" alt="Second slide"></a>
-                  </div>
-                  {% endfor %}
-           
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
               </div>
+              {% for myloves_profile in myloves_profiles %}
+              <div class="carousel-item">
+                <a href="{% url 'profile_show' profile_slug=myloves_profile.slug %}"><img class="d-block w-100" src="/media/{{myloves_profile.photo_one}}" alt="Second slide"></a>
+              </div>
+              {% endfor %}
+        
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
     
 
 

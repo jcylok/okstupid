@@ -36,11 +36,13 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="banner">
           <div class="container">
+              <a href="/"><img class="nav-logo" src="/static/images/newlogo.png" alt="home" width="125" height="125"><span></span></a>
+
           <!-- Brand -->
           {% if user.is_authenticated %}
-          <a class="navbar-brand" href="/"><span>OkStupid</span> &nbsp; &nbsp; {{ user.first_name }}, welcome back!</a>
+          <a class="navbar-brand" href="/"><span></span> &nbsp; &nbsp; {{ user.first_name }}, welcome back!</a>
           {% else %}
-          <a class="navbar-brand" href="/"><span>OkStupid</span> &nbsp; &nbsp; Hi, guest!</a>
+          <a class="navbar-brand" href="/"><span></span> &nbsp; &nbsp; Hi, guest!</a>
           {% endif %}
           <!-- Toggler/collapsibe Button -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
