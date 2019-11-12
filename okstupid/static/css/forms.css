@@ -72,6 +72,8 @@ input {
   text-align: center;
   margin-bottom: 15px;
   padding: 20px;
+  margin-top: 50px;
+
 }
 
 .edit-page{
@@ -80,3 +82,4 @@ input {
 .form-check{
   margin-right: 3px !important;
 }
+
