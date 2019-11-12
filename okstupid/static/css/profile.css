@@ -15,8 +15,8 @@
   background: url('/static/images/background-image.jpg') no-repeat center fixed;
   background-size: cover;
   z-index: 1;
-  transform: translate(0,-88px);
-  min-height: 150vh
+  transform: translate(0,-100px);
+  height: 1000vh
 }
 
 
@@ -27,7 +27,7 @@
   text-align: center;
   color: white;
   text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
-  min-height: 150vh
+  height: 1000vh
 }
 
 .profile img {
@@ -52,6 +52,7 @@
   font-size: 40px;
   font-family: Poppins;
   padding-top: 30vh;
+
 }
 
 .profile h4 {
@@ -63,6 +64,76 @@
   font-family: Poppins;
   color: white;
 }
+
+
+#mobnav-btn {
+  position: fixed;
+  top: 120px;
+  right: 40px;
+  opacity: 1;
+  color: #000;
+  display: block;
+  cursor: pointer;
+  padding: 10px 9px;
+  padding-bottom: 6px;
+  font-size: 16px;
+  border: 2px solid #DEDEDE;
+  z-index: 999999999999;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  background-color: pink;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin-top: 70px;
+}
+
+
+
+#mobnav-btn-left {
+  position: fixed;
+  top: 50px;
+  right: 40px;
+  opacity: 1;
+  color: #000;
+  display: block;
+  cursor: pointer;
+  padding: 10px 9px;
+  padding-bottom: 6px;
+  font-size: 16px;
+  border: 2px solid #DEDEDE;
+  z-index: 999999999999;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  background-color: pink;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin-top: 70px;
+}
+
+.mobile-menu #mobnav-btn .mobnav-btn-label {
+  display: block;
+}
+
+.mobile-menu-open #mobnav-btn {
+  background-color: #232128;
+  border-color: #232128;
+}
+
+.mobile-menu-open {
+  left: 50%;
+  overflow: hidden;
+}
+
+.mobile-menu-open #mobnav-btn .mobnav-icon {
+  color: white;
+}
+
 
 
 footer{
@@ -106,4 +177,3 @@ footer{
   width: 48px;
   height: 48px;
 }
-

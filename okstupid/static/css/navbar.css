@@ -25,30 +25,28 @@ h1,h2,h3,h4,h5,h6{color:#323233;text-transform:uppercase;}
 .navbar-nav .nav-item .nav-link{
 	padding: 1.1em 1em!important;
 	font-size: 120%;
-  font-weight: 500;
-  letter-spacing: 1px;
-  color: pink !important;
-  font-family: 'Gothic A1', sans-serif;
-}
-.navbar-nav .nav-item .nav-link:hover{
-	color:#fed136;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: pink !important;
+    font-family: 'Tajawal', sans-serif;
+
 }
 .navbar-expand-md .navbar-nav .dropdown-menu{
   border-top:0px solid red;
   background: rgba(255,182,193,0.5);
 }
 .dropdown-item:hover{background-color:#fed136;color:#fff;}
-nav{
-	-webkit-transition: padding-top .3s,padding-bottom .3s;
-  -moz-transition: padding-top .3s,padding-bottom .3s;
-  transition: padding-top .3s,padding-bottom .3s;
-  border: none;
-  background-color: rgba(33,37,60)
-}
-.shrink {
-  padding-top: 0;
-  padding-bottom: 0;
-  background-color: rgba(33,37,41)
+nav{-webkit-transition: padding-top .3s,padding-bottom .3s;
+    -moz-transition: padding-top .3s,padding-bottom .3s;
+    transition: padding-top .3s,padding-bottom .3s;
+    border: none;
+    background-color: rgba(33,37,41, 0.6)
+	}
+	
+ .shrink {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgba(33,37,41)
 }
 .banner{
 	background-image:url('http://www.hd-freewallpapers.com/latest-wallpapers/abstract-website-backgrounds.jpg');
