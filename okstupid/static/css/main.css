@@ -19,10 +19,9 @@
   box-sizing: border-box;
 }
 
-/* body {
+body {
   padding-top: 100px;
-} */
-
+}
 
 header {
   background: rgba(0, 0, 0, 0.7);
@@ -114,6 +113,10 @@ footer{
   background-color: #403565;
   color: white;
   text-align: center;
+<<<<<<< HEAD
   margin-top: 0;
 }
 
+=======
+}
+>>>>>>> submaster
