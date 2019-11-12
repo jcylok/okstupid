@@ -30,7 +30,7 @@ def profile_edit(request):
             return redirect('profile')
     else:
         form = ProfileForm(instance=profile)
-    context = {'profile': profile, 'form': form, 'header': f"{profile.user_id.first_name}, make sure to save the changes!"}
+    context = {'profile': profile, 'form': form, 'header': f"{profile.user_id.first_name}, make sure to save changes!"}
     return render(request, 'profile_form.html', context)
 
 
@@ -57,11 +57,11 @@ def singles_list(request):
   b = Matched.objects.filter(profile_id_init=request.user, passed=False, confirmed=True).values_list('profile_id_connect', flat=True)
   c = Matched.objects.filter(profile_id_connect=request.user, passed=True, confirmed=False).values_list('profile_id_init', flat=True)
   d = Matched.objects.filter(profile_id_init=request.user, passed=True, confirmed=False).values_list('profile_id_connect', flat=True)
-  d = Matched.objects.filter(profile_id_init=request.user, passed=False, confirmed=False).values_list('profile_id_connect', flat=True)
+  e = Matched.objects.filter(profile_id_init=request.user, passed=False, confirmed=False).values_list('profile_id_connect', flat=True)
 
   print(a)
   print(b)
-  bye = list(a) + list(b) + list(c) + list(d)
+  bye = list(a) + list(b) + list(c) + list(d) +list(e)
   print(bye)
   myprofile = Profile.objects.get(user_id=request.user)
   profile = Profile.objects.filter(

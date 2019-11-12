@@ -1,5 +1,5 @@
 :root {
-  --dark-blue: #023948;
+  --dark-blue: #02394857;
   --navy: #403563;
   --light-blue: #5158bb;
   --violet: #f26df9;
@@ -15,8 +15,8 @@
   background: url('/static/images/background-image.jpg') no-repeat center fixed;
   background-size: cover;
   z-index: 1;
-  transform: translate(0,-100px);
-  height: 1000vh
+  /* transform: translate(0,-100px); */
+  min-height: 1000px;
 }
 
 
@@ -32,6 +32,7 @@
 
 .profile img {
   border: 2px solid black;
+  /* transform: rotate(90deg); */
 }
 
 .about ul {
@@ -52,11 +53,14 @@
   font-size: 40px;
   font-family: Poppins;
   padding-top: 30vh;
+  color: pink;
 
 }
 
 .profile h4 {
   font-family: Poppins;
+  color: pink;
+  
 }
 
 .profile p {
@@ -145,6 +149,7 @@ footer{
   background-color: rgba(0, 0, 0, .55);
   color: white;
   text-align: center;
+  z-index: 100;
 }
 
 .footer {
@@ -177,3 +182,27 @@ footer{
   width: 48px;
   height: 48px;
 }
+
+
+#mobnav-btn-left, #mobnav-btn {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+#mobnav-btn-left:hover, #mobnav-btn:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#findme {
+  color: orange;
+}
+
+#footer-message {
+  font-size: 12px;
+  color: grey;
+}
+
+
+
+

@@ -11,11 +11,13 @@
         </div>
     </div>
     </a>
+    <a id="passbutton" href="{% url 'pass_handle' pk=profile.id %}">
     <div id="mobnav-btn">
         <div class="mobnav-icon">
             No
         </div>
     </div>
+    </a>
     {% elif pair.confirmed == False and pair.profile_id_connect == request.user %}
     <a id="likebutton" href="{% url 'match_handle' pk=profile.id %}">
         <div id="mobnav-btn-left">
@@ -42,7 +44,8 @@
   
 <main class="profile">
 
-  <h2>{{ profile.nickname }} {{ profile.age }}</h2>
+  <h2>{{ profile.nickname }} </h2>
+  <h4>Age: {{ profile.age }}</h4>
 
 
 
@@ -92,8 +95,11 @@
   <div class="action">
 {% if request.user != profile.user_id %}
 
-    {% if pair.profile_id_init == request.user or pair.profile_id_connect == request.user %}
-    <p>Your've liked this person.</p>
+    <!-- {% if pair.profile_id_init == request.user or pair.profile_id_connect == request.user %}
+    <p>Your've liked me.</p>
+    {% endif %} -->
+    {% if pair.confirmed %}
+    <p id="findme">Pleae find me  : {{profile.user_id.email}} </p>
     {% endif %}
 {% endif %}
 </div>
@@ -105,13 +111,13 @@
 
 <footer class="footer">
     <div>
-      <span>&copy; 2019 OkStupid</span>
+      <span id="footer-message">&copy; 2019 OkStupid with Love</span>
         <ul class="social-icons">
-          <li><a href="https://www.instagram.com/livingindiatv/"><img src="/static/images/instagram.png" alt="instagram" width="30" height="30"><span></span></a></li>
-          <li><a href="https://in.pinterest.com/livingindiatv/"><img src="/static/images/pintrest.png" alt="pinterest" width="30" height="30"><span></span></a></li>
+          <li><a href="https://www.instagram.com/"><img src="/static/images/instagram.png" alt="instagram" width="30" height="30"><span></span></a></li>
+          <li><a href="https://in.pinterest.com/"><img src="/static/images/pintrest.png" alt="pinterest" width="30" height="30"><span></span></a></li>
           <li><a href="https://youtube.com"><img src="/static/images/youtube.png" alt="youtube" width="30" height="30"><span></span></a></li>
-          <li><a href="https://twitter.com/livingindiatv"><img src="/static/images/twitter.png" alt="twitter" width="30" height="30"><span></span></a></li>
-          <li><a href="https://www.facebook.com/livingindiatv/"><img src="/static/images/facebook.png" alt="facebook" width="30" height="30"><span></span></a></li>
+          <li><a href="https://twitter.com/"><img src="/static/images/twitter.png" alt="twitter" width="30" height="30"><span></span></a></li>
+          <li><a href="https://www.facebook.com/"><img src="/static/images/facebook.png" alt="facebook" width="30" height="30"><span></span></a></li>
          </ul>
     </div>
 </footer>
