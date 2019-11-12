@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="background">
-<main class="profile">
+<section class="background" width="device-width">
+<main class="profile" width = "device-width">
   <h2>{{ profile.nickname }} {{ profile.age }}</h2>
   <div class="photos">
-      <img src="/media/{{profile.photo_one}}" width="450" height="420"/>
+      <img width="device-width" src="/media/{{profile.photo_one}}" width="450" height="420"/>
   </div>
 <br>
   <div class="prompts">
@@ -14,7 +14,7 @@
   </div>
 <br>
   <div class="photos">
-    <img src="/media/{{profile.photo_two}}" width="450" height="420"/>
+    <img width = "device-width" src="/media/{{profile.photo_two}}" width="450" height="420"/>
   </div>
 <br>
   <div class="about">
@@ -39,7 +39,7 @@
   </div>
 <br>
   <div class="photos">
-      <img src="/media/{{profile.photo_three}}" width="450" height="420"/>
+      <img width = "device-width" src="/media/{{profile.photo_three}}" width="450" height="420"/>
   </div>
 <br>
   <div class="prompts">
