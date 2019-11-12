@@ -1,39 +1,42 @@
 {% extends 'base.html' %} 
 {% block content %}
-<main class="resgiter-back">
+<main class="resgiter-back row justify-content-center align-items-center">
     {% if error %}
     <p style="background-color: firebrick;">{{error}}</p>
     {% endif %}
-
-    <section class="form-group">
-        <form action="{% url 'register' %}" method="POST" class="user-form">
-            {% csrf_token %}
-            <p>
-                <label class="register-text-color" for="first_name">First Name</label>
-                <input class="log form-control" type="text" name="first_name" required maxlength="25" minlength="2">
-            </p>
-            <p>
-                <label class="register-text-color" for="last_name">Last Name</label>
-                <input class="log form-control" type="text" name="last_name" required maxlength="25" minlength="2">
-            </p>
-            <p>
-                <label class="register-text-color" for="email">Email</label>
-                <input class="log form-control" type="email" name="email" required maxlength="25" minlength="2">
-            </p>
-            <p>
-                <label class="register-text-color" for="username">Username</label>
-                <input class="log form-control" type="text" name="username" required maxlength="25" minlength="2">
-            </p>
-            <p>
-                <label class="register-text-color" for="password">Password</label>
-                <input class="log form-control" type="password" name="password" required maxlength="25" minlength="4">
-            </p>
-            <p>
-                <label class="register-text-color" for="password2">Confirm Password</label>
-                <input class="log form-control" type="password" name="password2" required maxlength="25" minlength="4">
-            </p>
-            <button class="btn btn-danger" type="submit">Register</button>
-        </form>
-    </section>
+    <div class="col col-md-4 col-lg-4"></div>
+    <div class="col col-md-4 col-lg-4"></div>
+    <div class="col col-md-4 col-lg-4">
+        <section class="form-group">
+            <form action="{% url 'register' %}" method="POST" class="user-form">
+                {% csrf_token %}
+                <p>
+                    <label class="text-color" for="first_name">First Name</label>
+                    <input class="log form-control" type="text" name="first_name" required maxlength="25" minlength="2">
+                </p>
+                <p>
+                    <label class="text-color" for="last_name">Last Name</label>
+                    <input class="log form-control" type="text" name="last_name" required maxlength="25" minlength="2">
+                </p>
+                <p>
+                    <label class="text-color" for="email">Email</label>
+                    <input class="log form-control" type="email" name="email" required maxlength="25" minlength="2">
+                </p>
+                <p>
+                    <label class="text-color" for="username">Username</label>
+                    <input class="log form-control" type="text" name="username" required maxlength="25" minlength="2">
+                </p>
+                <p>
+                    <label class="text-color" for="password">Password</label>
+                    <input class="log form-control" type="password" name="password" required maxlength="25" minlength="4">
+                </p>
+                <p>
+                    <label class="text-color" for="password2">Confirm Password</label>
+                    <input class="log form-control" type="password" name="password2" required maxlength="25" minlength="4">
+                </p>
+                <button class="btn btn-danger" type="submit">Register</button>
+            </form>
+        </section>
+    </div>
 </main>
 {% endblock %}
